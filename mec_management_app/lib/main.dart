@@ -3,6 +3,7 @@ import 'package:mec_management_app/pages/login.dart';
 import 'package:mec_management_app/pages/signup.dart';
 
 void main() => runApp(MaterialApp(
+      initialRoute: '/login',
       routes: {
         '/': (context) => Home(),
         '/login': (context) => Login(),

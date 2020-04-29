@@ -6,10 +6,17 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  String _email;
+  String _password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      body: Center(
+        child: Column(
+          children: <Widget>[],
+        ),
+      ),
     );
   }
 }
