@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "435278979988",
+    "firebase_url": "https://mecmanagementapp.firebaseio.com",
+    "project_id": "mecmanagementapp",
+    "storage_bucket": "mecmanagementapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435278979988:android:2a1a1488efc020080ea581",
+        "android_client_info": {
+          "package_name": "com.example.mec_management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435278979988-4p27kpl5c7lq55jg8i8aj7neqc1o6nnq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2cVGqME343U28LX2ugCBvu_KG8j2_Eu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435278979988-4p27kpl5c7lq55jg8i8aj7neqc1o6nnq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
