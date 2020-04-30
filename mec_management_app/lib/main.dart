@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mec_management_app/UI/home_page.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 
-<<<<<<< HEAD
 void main() => runApp(new MyApp());
-=======
-void main() => runApp(MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Home(),
-        '/login': (context) => Login(),
-        '/signup': (context) => Signup()
-      },
-      debugShowCheckedModeBanner: false,
-    ));
->>>>>>> 9a12aa4c9b9ef74cad6f52935004cf579747eff4
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,10 +10,13 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Mahindra Ecole Centrale',
       theme: new ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: new LoginPage(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/home': (context) => HomePage()
+      },
     );
   }
 }

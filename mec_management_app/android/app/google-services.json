@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "435278979988-5uq60k7ot58dmicvvs68jrj4pplt4p1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mec_management_app",
+            "certificate_hash": "ff6a76240990fd8aa119fa48a299fa0aef229d54"
+          }
+        },
+        {
           "client_id": "435278979988-4p27kpl5c7lq55jg8i8aj7neqc1o6nnq.apps.googleusercontent.com",
           "client_type": 3
         }
