@@ -29,6 +29,8 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   font_awesome_flutter: ^8.8.1
+  liquid_swipe: ^1.4.3
+
 
 dev_dependencies:
   flutter_test:
@@ -44,7 +46,16 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-assets: "assets/img/"
+assets:
+  - assets/Aero.png
+  - assets/Baja.png
+  - assets/EIC.png
+  - assets/enigma.png
+  - assets/Erudite.png
+  - assets/login_logo.png
+  - assets/orion.png
+  - assets/SecretGarden.png
+
 
 # An image asset can refer to one or more resolution-specific "variants", see
 # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -67,5 +78,11 @@ fonts:
   - family: WorkSansMedium
     fonts:
       - asset: assets/fonts/Work_Sans/WorkSans-Medium.ttf
+  - family: Product Sans
+    fonts:
+      - asset: assets/fonts/Product_Sans_Bold.ttf
+      - asset: assets/fonts/Product_Sans_Regular.ttf
+
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
