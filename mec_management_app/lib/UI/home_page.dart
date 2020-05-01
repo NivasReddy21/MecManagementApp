@@ -199,7 +199,7 @@ class _HomePageState extends State<HomePage>
   Widget menuButtons({String name, IconData icon, String route}) {
     return FlatButton.icon(
         onPressed: () {
-          // Navigator.pushNamed(context, '/$route');
+          Navigator.pushNamed(context, '$route');
         },
         icon: Icon(
           icon,
