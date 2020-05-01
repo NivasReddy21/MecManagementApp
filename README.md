@@ -6,7 +6,8 @@ Todo :
   - Parents Login
   - Faculty Login
 2. Profile Page
-3. DashBoard/Home
+3. Clubs page(DONE)
+3. DashBoard/Home (DONE)
 4. Posts
 5. E-card
 6. TimeTable
