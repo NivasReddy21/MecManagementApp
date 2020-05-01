@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
+void main() => runApp(MyApp());
+
 class MyApp extends StatelessWidget {
   static const TextStyle goldcoinGreyStyle = TextStyle(
       color: Colors.grey,
@@ -52,17 +54,13 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
-                  style: goldcoinGreyStyle,
-                ),
-                Text(
-                  "Skip",
+                  "ENIGMA",
                   style: goldcoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/enigma.png"),
+          Image.asset("../assets/enigma.png"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -70,20 +68,21 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "Head",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "ROCHAN",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is CS Club\n"
+                  "This is Active Club\n"
+                  "Contact Rochan to know\n"
+                  "more about this club",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -93,7 +92,7 @@ class MyApp extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.white,
+      color: Color(0xFF55006c),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,17 +103,17 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
+                  "SAE",
                   style: goldCoinGreyStyle,
                 ),
                 Text(
-                  "Skip",
+                  "AERO",
                   style: goldCoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/EIC.png"),
+          Image.asset("assets/img/Aero.png"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -122,20 +121,21 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "HEAD",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "Rohan",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is SAE Aero\n"
+                  "Started in 2018\n"
+                  "Contact Rohan or\n"
+                  "Husein to know abt AERO",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -145,7 +145,7 @@ class MyApp extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.white,
+      color: Colors.red[300],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,17 +156,13 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
-                  style: goldcoinGreyStyle,
-                ),
-                Text(
-                  "Skip",
-                  style: goldcoinGreyStyle,
+                  "BAJA",
+                  style: goldCoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/Aero.png"),
+          Image.asset("../assets/Baja.png"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -174,20 +170,21 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "HEAD",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "VEDANT",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is SAE BAJA\n"
+                  "Started in 2018\n"
+                  "Contact Vedant to\n"
+                  "to know about BAJA",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -197,7 +194,7 @@ class MyApp extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.white,
+      color: Colors.yellow,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,17 +205,13 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
-                  style: goldcoinGreyStyle,
-                ),
-                Text(
-                  "Skip",
+                  "EIC",
                   style: goldcoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/Baja.png"),
+          Image.asset("../assets/EIC.jpg"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -226,20 +219,20 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "HEAD",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "UNKNOWN",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is EIC Club\n"
+                  "To know more about\n"
+                  "this club contact me",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -249,7 +242,7 @@ class MyApp extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.white,
+      color: Colors.blue[100],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,17 +253,13 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
-                  style: goldcoinGreyStyle,
-                ),
-                Text(
-                  "Skip",
+                  "Erudite",
                   style: goldcoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/Erudite.png"),
+          Image.asset("../assets/Erudite.png"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -278,20 +267,20 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "HEAD",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "UNKNOWN",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is Erudite Club\n"
+                  "Debate Club\n"
+                  "Contact Me",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -301,7 +290,7 @@ class MyApp extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.white,
+      color: Colors.green[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -312,17 +301,13 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "GoldCoin",
-                  style: goldcoinGreyStyle,
-                ),
-                Text(
-                  "Skip",
+                  "SecretGarden",
                   style: goldcoinGreyStyle,
                 ),
               ],
             ),
           ),
-          Image.asset("assets/orion.png"),
+          Image.asset("../assets/SecretGarden.png"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
@@ -330,20 +315,72 @@ class MyApp extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online",
+                  "HEAD",
                   style: greyStyle,
                 ),
                 Text(
-                  "Gambling",
+                  "UNKNOWN",
                   style: boldStyle,
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  "My name is anurag\n"
-                  "I am UG student\n"
-                  "I miss amrutha",
+                  "This is cybersecurity\n"
+                  "Club\n"
+                  "Contact me",
+                  style: descriptionGreyStyle,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+    Container(
+      color: Colors.pink[300],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  "Orion",
+                  style: goldcoinGreyStyle,
+                ),
+                Text(
+                  "Drone",
+                  style: goldcoinGreyStyle,
+                ),
+              ],
+            ),
+          ),
+          Image.asset("../assets/orion.png"),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              //mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "HEAD",
+                  style: greyStyle,
+                ),
+                Text(
+                  "UNKNOWN",
+                  style: boldStyle,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "This is orion club\n"
+                  "We make drones here\n"
+                  "Contact me",
                   style: descriptionGreyStyle,
                 ),
               ],
