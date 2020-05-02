@@ -32,6 +32,9 @@ dependencies:
   liquid_swipe: ^1.4.3
 
   flutter_spinkit: ^4.1.2+1
+  intl: ^0.16.1
+  datetime_picker_formfield: ^1.0.0
+  rxdart: ^0.22.2
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +51,10 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/event_images/
     - assets/
+    - assets/img/
+    - assets/guest_images/
 
 # An image asset can refer to one or more resolution-specific "variants", see
 # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -75,5 +81,21 @@ flutter:
       fonts:
         - asset: assets/font/Product_Sans_Bold.ttf
         - asset: assets/font/Product_Sans_Regular.ttf
+    - family: SF-Pro-Text-Regular
+      fonts:
+        - asset: assets/font/SF-Pro-Text-Regular.otf
+
+    - family: SF-Pro-Text-Bold
+      fonts:
+        - asset: assets/font/SF-Pro-Text-Bold.otf
+
+    - family: Calibre-Semibold
+      fonts:
+        - asset: assets/font/Calibre Semibold.otf
+
+    - family: CustomIcons
+      fonts:
+        - asset: assets/font/custom_icons.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
