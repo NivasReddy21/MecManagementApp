@@ -68,9 +68,7 @@ class _HomePageState extends State<HomePage>
                       backgroundImage: AssetImage('assets/fall.jpg'),
                       radius: 23,
                     ),
-                    SizedBox(
-                      width: 7,
-                    ),
+                    SizedBox(width: 7),
                     Text(
                       'John Snow',
                       style: TextStyle(
