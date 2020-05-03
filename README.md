@@ -12,8 +12,6 @@ Todo :
 4. Posts (DONE)
 5. E-card (Parents login)
 6. TimeTable
-7. Upload Assignment
-8. chat
 9. Holidays (parents and students login)
 10. Create post page (Almost Done - Should add post function)
 11. Events page ( Should upload Aether pics , Traditional day and events conducted )
