@@ -3,6 +3,7 @@ import 'package:mec_management_app/UI/clubs_page.dart';
 import 'package:mec_management_app/UI/home_page_1.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 
+import 'UI/holidays/holidays_listing_screen.dart';
 import 'UI/intropage.dart';
 
 void main() => runApp(new MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/intro': (context) => introPage(),
         '/home': (context) => HomePage(),
         '/clubs': (context) => ClubsPage(),
+        '/holidays': (context) => HolidaysListingScreen(),
       },
     );
   }
