@@ -91,7 +91,9 @@ class _HomePageState extends State<HomePage>
                 ),
                 SizedBox(height: 70),
                 menuButtons(
-                    route: '/intro', icon: Icons.label_important, name: 'Introduction'),
+                    route: '/intro',
+                    icon: Icons.label_important,
+                    name: 'Introduction'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Clubs Info',
