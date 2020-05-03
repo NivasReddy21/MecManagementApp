@@ -15,7 +15,6 @@ Todo :
 9. Holidays (parents and students login)
 10. Create post page (Almost Done - Should add post function)
 11. Events page ( Should upload Aether pics , Traditional day and events conducted )
-12. Book clubhouse
 13. CCD state
 14. Hostel room service ( Not needed Ig only helpline numbers will be enough)
 15. Professors location
