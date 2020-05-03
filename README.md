@@ -12,7 +12,7 @@ Todo :
 4. Posts (DONE) .
 5. E-card (Parents login) .
 6. TimeTable .
-9. Holidays (parents and students login) .
+9. Holidays (parents and students login) (DONE) .
 10. Create post page (Almost Done - Should add post function) .
 11. Events page ( Should upload Aether pics , Traditional day and events conducted ) .
 13. CCD state .
