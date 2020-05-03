@@ -133,7 +133,7 @@ class _introPage extends State<introPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Favourite",
+                    Text("Developers",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 46.0,
