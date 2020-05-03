@@ -15,13 +15,13 @@ class Event {
 }
 
 final fiveKmRunEvent = Event(
-    imagePath: "assets/event_images/5_km_downtown_run.jpeg",
-    title: "5 Kilometer Downtown Run",
+    imagePath: "assets/event_images/aether.jpg",
+    title: "AETHER",
     description: "",
-    location: "Pleasant Park",
-    duration: "3h",
-    punchLine1: "Marathon!",
-    punchLine2: "The latest fad in foodology, get the inside scoup.",
+    location: "Mahindra Ecole Centrale",
+    duration: "",
+    punchLine1: "",
+    punchLine2: "The Annual Techno-Cultural-Literary Fest",
     galleryImages: [],
     categoryIds: [0, 1]);
 

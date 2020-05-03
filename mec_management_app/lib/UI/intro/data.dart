@@ -1,13 +1,13 @@
 List<String> images = [
-  "assets/img/image_04.jpg",
-  "assets/img/image_03.jpg",
-  "assets/img/image_02.jpg",
-  "assets/img/image_01.png",
+  "assets/img/image3.png",
+  "assets/img/image2.png",
+  "assets/img/image.png",
+  "assets/img/MEC.png",
 ];
 
 List<String> title = [
-  "Hounted Ground",
-  "Fallen In Love",
-  "The Dreaming Moon",
-  "Jack the Persian and the Black Castel",
+  "",
+  "",
+  "",
+  "Mahindra Ecole Centrale",
 ];
