@@ -6,7 +6,7 @@ Todo :
   - Parents Login
   - Faculty Login
 2. About page 
-3. Introduction page
+3. Introduction page (DONE)
 3. Clubs page(DONE)
 3. DashBoard/Home (DONE)
 4. Posts (DONE)
