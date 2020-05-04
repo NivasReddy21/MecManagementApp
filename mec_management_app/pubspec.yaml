@@ -21,6 +21,7 @@ dependencies:
   cloud_firestore:
   google_sign_in:
   rxdart: ^0.24.0
+  firebase_storage:
 
   flutter:
     sdk: flutter

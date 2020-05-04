@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     getUser();
+    getDocs();
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
@@ -296,7 +297,12 @@ class _HomePageState extends State<HomePage>
   }
 
   void getUserName(FirebaseUser user) {
-    userName = user.displayName;
+    if (user.displayName != null) {
+      userName = user.displayName;
+    } else {
+      userName = 'Loading...';
+      getUser();
+    }
     displayUrl = user.photoUrl;
   }
 }
