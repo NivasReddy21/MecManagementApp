@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/intro/data.dart';
 import 'dart:math';
 
-import 'intro/CustomIcons.dart';
 
 // ignore: camel_case_types
 class introPage extends StatefulWidget {
