@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/clubs_page.dart';
+import 'package:mec_management_app/UI/faculty/branches.dart';
 import 'package:mec_management_app/UI/home_page_1.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
+        '/faculty': (context) => Branches()
       },
     );
   }

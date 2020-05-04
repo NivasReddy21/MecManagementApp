@@ -18,10 +18,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: Colors.black.withOpacity(0.6),
         ),
         image: '',
-        name: 'ACHAL AGARWAL',
-        number: 'achal.agarwal@mechyd.ac.in',
+        name: 'ANI THOMAS',
+        number: 'ani.thomas@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \n SOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -35,10 +35,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: kRed.withOpacity(0.4),
         ),
         image: '',
-        name: 'ARYA KUMAR BHATTACHARYA',
-        number: 'arya.bhattacharya@mechyd.ac.in',
+        name: 'PAROMITA BOSE',
+        number: 'paromita.bose@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -57,10 +57,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           ),
         ),
         image: '',
-        name: 'BRUHADESHWAR BEZAWADA',
-        number: 'bru@mechyd.ac.in',
+        name: 'RAJ NARAYAN',
+        number: 'raj.narayan@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -74,10 +74,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: Colors.black.withOpacity(0.6),
         ),
         image: '',
-        name: 'NEHA BHARILL',
-        number: 'neha.bharill@mechyd.ac.in',
+        name: 'RAJ KUMAR PHATATE',
+        number: 'rajkumar.phatate@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -91,10 +91,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: kRed.withOpacity(0.4),
         ),
         image: '',
-        name: 'OM PRAKASH PATEL',
-        number: 'omprakash.patel@mechyd.ac.in',
+        name: 'RANJITH SHANKARAN',
+        number: 'ranjith.shankaran@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -113,10 +113,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           ),
         ),
         image: '',
-        name: 'PRAFULLA KALAPATAPU',
-        number: 'prafulla.kalapatapu@mechyd.ac.in',
+        name: 'SALOME BENHUR',
+        number: 'Salome.Benhur@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -130,10 +130,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: Colors.black.withOpacity(0.6),
         ),
         image: '',
-        name: 'RAGHU KISHORE NEELISETTI',
-        number: 'raghukishore.neelisetti@mechyd.ac.in',
+        name: 'SAYONI LAHA',
+        number: 'sayoni.laha@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -147,10 +147,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: kRed.withOpacity(0.4),
         ),
         image: '',
-        name: 'RAMA MURTHY',
-        number: 'rama.murthy@mechyd.ac.in',
+        name: 'SHIVDASINI SINGH AMIN',
+        number: 'shivdasini.amin@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -169,10 +169,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           ),
         ),
         image: '',
-        name: 'RAVI KISHORE',
-        number: 'ravikishore.vasala@mechyd.ac.in',
+        name: 'TABITHA CHEKURI',
+        number: 'tabitha.chekuri@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
@@ -186,27 +186,10 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: Colors.black.withOpacity(0.6),
         ),
         image: '',
-        name: 'SUNNY RAI',
-        number: 'sunny.rai@mechyd.ac.in',
+        name: 'TAMAL KANTI PAUL',
+        number: 'tamal.paul@mechyd.ac.in',
         company: Text(
-          'COMPUTER \nSCIENCE',
-          textAlign: TextAlign.right,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w800,
-            fontSize: 16,
-          ),
-        ),
-      ),
-      FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
-        image: '',
-        name: 'VEERAIAH',
-        number: 'veeraiah.talagondapati@mechyd.ac.in',
-        company: Text(
-          'COMPUTER \nSCIENCE',
+          'HUMANITIES AND \nSOCIAL SCIENCES',
           textAlign: TextAlign.right,
           style: TextStyle(
             color: Colors.white,
