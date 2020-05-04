@@ -24,9 +24,12 @@ class _HomePageState extends State<HomePage>
   Animation<double> _scaleAnimation;
   Animation<Offset> _slideAnimation;
   Animation<double> _menuScaleAnimation;
+  String userName;
+  String displayUrl;
 
   @override
   void initState() {
+    getUser();
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
@@ -74,14 +77,14 @@ class _HomePageState extends State<HomePage>
                 Row(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: AssetImage('assets/img/fall.jpg'),
+                      backgroundImage: AssetImage(displayUrl),
                       radius: 23,
                     ),
                     SizedBox(
                       width: 7,
                     ),
                     Text(
-                      'John Snow',
+                      userName,
                       style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
@@ -284,5 +287,16 @@ class _HomePageState extends State<HomePage>
             fontSize: 22,
           ),
         ));
+  }
+
+  Future<FirebaseUser> getUser() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    getUserName(user);
+    return user;
+  }
+
+  void getUserName(FirebaseUser user) {
+    userName = user.displayName;
+    displayUrl = user.photoUrl;
   }
 }

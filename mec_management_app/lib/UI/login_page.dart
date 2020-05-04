@@ -46,6 +46,7 @@ class _LoginPageState extends State<LoginPage>
   String signUpEmail;
   String signUpPassword;
   String confirmPassword;
+  String userName;
   bool ifConfirmPass = true;
 
   String signInEmail;
@@ -362,7 +363,8 @@ class _LoginPageState extends State<LoginPage>
                           .then((signedUser) {
                         showInSnackBar("Login Successfull");
                         Navigator.of(context).pop();
-                        Navigator.of(context).pushReplacementNamed('/home');
+                        Navigator.of(context).pushReplacementNamed('/home',
+                            arguments: {'userObj': signedUser.user});
                       }).catchError((e) {
                         print(e);
                       });
@@ -517,6 +519,11 @@ class _LoginPageState extends State<LoginPage>
                             hintStyle: TextStyle(
                                 fontFamily: "WorkSansSemiBold", fontSize: 16.0),
                           ),
+                          onChanged: (value) {
+                            setState(() {
+                              userName = value.toString();
+                            });
+                          },
                         ),
                       ),
                       Container(
@@ -692,8 +699,21 @@ class _LoginPageState extends State<LoginPage>
                                       email: signUpEmail,
                                       password: signUpPassword)
                                   .then((signedInUser) {
-                                  UserManagement()
-                                      .storeNewUser(signedInUser, context);
+                                  var userUpdateInfo = new UserUpdateInfo();
+                                  userUpdateInfo.displayName = userName;
+                                  userUpdateInfo.photoUrl =
+                                      'assets/img/fall.jpg';
+                                  FirebaseAuth.instance
+                                      .currentUser()
+                                      .then((user) {
+                                    user
+                                        .updateProfile(userUpdateInfo)
+                                        .then((value) {
+                                      _handleEmailSignIn();
+                                    });
+                                  }).catchError((e) {
+                                    print(e);
+                                  });
                                 }).catchError((e) {
                                   print(e);
                                 })
@@ -745,6 +765,14 @@ class _LoginPageState extends State<LoginPage>
     final FirebaseUser user =
         (await _auth.signInWithCredential(credential)) as FirebaseUser;
     print("signed in " + user.displayName);
+    UserManagement().storeNewUser(user, context);
+    return user;
+  }
+
+  Future<FirebaseUser> _handleEmailSignIn() async {
+    final FirebaseUser user = (await _auth.currentUser());
+    print("signed in " + user.displayName);
+    UserManagement().storeNewUser(user, context);
     return user;
   }
 }
