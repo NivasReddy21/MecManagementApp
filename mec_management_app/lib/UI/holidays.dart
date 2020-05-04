@@ -45,7 +45,7 @@ List characters = [
   ),
   Character(
       name: "Winter",
-      imagePath: "assets/img/Agnes_gru.png",
+      imagePath: "assets/img/char1.jpg",
       description:
       "October 2nd --> GandhiJayanthi\n"
           "October 25th --> Dussehra\n"

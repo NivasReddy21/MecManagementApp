@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage>
                 Row(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: AssetImage(displayUrl),
+                      backgroundImage: AssetImage('assets/img/image2.png'),
                       radius: 23,
                     ),
                     SizedBox(
@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage>
                         children: <Widget>[
                           Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 15.0),
+                                const EdgeInsets.symmetric(horizontal: 12.0),
                             child: Row(
                               children: <Widget>[
                                 IconButton(
