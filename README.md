@@ -17,4 +17,4 @@ Todo :
 11. Events page ( Should upload Aether pics , Traditional day and events conducted ) .
 13. CCD state .
 14. Hostel room service ( Not needed Ig only helpline numbers will be enough) .
-15. Professors location .
+15. Professors location (DONE)
