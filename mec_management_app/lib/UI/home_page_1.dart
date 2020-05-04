@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage>
                 Row(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: AssetImage(displayUrl),
+                      backgroundImage: AssetImage('assets/img/fall.jpg'),
                       radius: 23,
                     ),
                     SizedBox(
