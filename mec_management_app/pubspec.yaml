@@ -34,7 +34,7 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   intl: ^0.16.1
   datetime_picker_formfield: ^1.0.0
-  rxdart: ^0.22.2
+  after_layout: ^1.0.7+2
 
 dev_dependencies:
   flutter_test:
@@ -96,6 +96,16 @@ flutter:
     - family: CustomIcons
       fonts:
         - asset: assets/font/custom_icons.ttf
+
+    - family: WorkSans
+      fonts:
+        - asset: assets/font/WorkSans-Regular.ttf
+        - asset: assets/font/WorkSans-Medium.ttf
+          weight: 500
+        - asset: assets/font/WorkSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/font/WorkSans-Bold.ttf
+          weight: 700
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

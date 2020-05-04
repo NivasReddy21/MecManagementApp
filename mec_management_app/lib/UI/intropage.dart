@@ -47,22 +47,6 @@ class _introPage extends State<introPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        CustomIcons.menu,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () {},
-                    )
                   ],
                 ),
               ),
@@ -71,21 +55,13 @@ class _introPage extends State<introPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Introduction",
+                    Text("Know About Our App",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 46.0,
+                          fontSize: 26.0,
                           fontFamily: "Calibre-Semibold",
                           letterSpacing: 1.0,
                         )),
-                    IconButton(
-                      icon: Icon(
-                        CustomIcons.option,
-                        size: 12.0,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    )
                   ],
                 ),
               ),
@@ -102,7 +78,7 @@ class _introPage extends State<introPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
-                          child: Text("Animated",
+                          child: Text("",
                               style: TextStyle(color: Colors.white)),
                         ),
                       ),
@@ -140,14 +116,6 @@ class _introPage extends State<introPage> {
                           fontFamily: "Calibre-Semibold",
                           letterSpacing: 1.0,
                         )),
-                    IconButton(
-                      icon: Icon(
-                        CustomIcons.option,
-                        size: 12.0,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    )
                   ],
                 ),
               ),
@@ -164,7 +132,7 @@ class _introPage extends State<introPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
-                          child: Text("Latest",
+                          child: Text("",
                               style: TextStyle(color: Colors.white)),
                         ),
                       ),
@@ -184,8 +152,8 @@ class _introPage extends State<introPage> {
                     padding: EdgeInsets.only(left: 18.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset("assets/img/image_02.jpg",
-                          width: 296.0, height: 222.0),
+                      child: Image.asset("assets/img/secondImage.png",
+                          width: 200.0, height: 200.0),
                     ),
                   )
                 ],
@@ -282,8 +250,6 @@ class CardScrollWidget extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     color: Colors.blueAccent,
                                     borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("Read Later",
-                                    style: TextStyle(color: Colors.white)),
                               ),
                             )
                           ],
