@@ -5,10 +5,10 @@ Todo :
   - Students Login .
   - Parents Login .
   - Faculty Login .
-2. About page (Not needed as of now ) for students login .
-3. Introduction page (DONE) .
+2. About page (DONE).
 3. Clubs page(DONE) .
-3. DashBoard/Home (DONE) .
+12. Confessions Page
+7. DashBoard/Home (DONE) .
 4. Posts (DONE) .
 5. E-card (Parents login) .
 6. TimeTable .
