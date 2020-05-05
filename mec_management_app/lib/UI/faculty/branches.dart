@@ -12,8 +12,6 @@ class _Branches extends State<Branches> {
     ["Electrical", '/eee'],
     ["Civil", '/civil'],
     ["Humanities", '/humanities'],
-    ["French", '/french'],
-    ["Economics", '/economics'],
     ["Maths", '/math'],
     ["Physics", '/phy'],
     ["Chemistry", '/chemistry']

@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<CSEFacultyPage> {
+class _FacultyPageState extends State<MechFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -291,7 +291,7 @@ class _FacultyPageState extends State<CSEFacultyPage> {
   }
 }
 
-class CSEFacultyPage extends StatefulWidget {
+class MechFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }

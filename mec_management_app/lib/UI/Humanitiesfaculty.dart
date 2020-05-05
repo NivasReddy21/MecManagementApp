@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<CSEFacultyPage> {
+class _FacultyPageState extends State<humanitiesFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -198,6 +198,57 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           ),
         ),
       ),
+      FacultyCard(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.6),
+        ),
+        image: '',
+        name: 'KRISHNA REDDY CHITTEDI',
+        number: 'krishna.chittedi@mechyd.ac.in',
+        company: Text(
+          'ECONOMICS',
+          textAlign: TextAlign.right,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+            fontSize: 16,
+          ),
+        ),
+      ),
+      FacultyCard(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.6),
+        ),
+        image: '',
+        name: 'KUMUDHAM \nBALASUBRAMANIAN',
+        number: 'kumudham.balasubramanian\n@mechyd.ac.in',
+        company: Text(
+          'FRENCH',
+          textAlign: TextAlign.right,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+            fontSize: 16,
+          ),
+        ),
+      ),
+      FacultyCard(
+        decoration: BoxDecoration(
+          color: kRed.withOpacity(0.4),
+        ),
+        image: '',
+        name: 'MAUD TYCKAERT',
+        number: 'maud.tyckaert@mechyd.ac.in',
+        company: Text(
+          'FRENCH',
+          textAlign: TextAlign.right,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+            fontSize: 16,
+          ),
+        ),
+      ),
     ];
   }
 
@@ -257,7 +308,8 @@ class _FacultyPageState extends State<CSEFacultyPage> {
   }
 }
 
-class CSEFacultyPage extends StatefulWidget {
+// ignore: camel_case_types
+class humanitiesFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }

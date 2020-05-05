@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<CSEFacultyPage> {
+class _FacultyPageState extends State<civilFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -218,7 +218,8 @@ class _FacultyPageState extends State<CSEFacultyPage> {
   }
 }
 
-class CSEFacultyPage extends StatefulWidget {
+// ignore: camel_case_types
+class civilFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }
