@@ -131,6 +131,9 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Confessions', icon: Icons.edit, route: '/confessions'),
+                SizedBox(height: 15),
+                menuButtons(
+                    name: 'CCD', icon: Icons.local_cafe, route: '/frontPage'),
                 SizedBox(height: 150),
                 FlatButton.icon(
                     onPressed: () {

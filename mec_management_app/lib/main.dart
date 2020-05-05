@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mec_management_app/UI/CCD/frontpage.dart';
 import 'package:mec_management_app/UI/CIVILfaculty.dart';
 import 'package:mec_management_app/UI/CSEfaculty.dart';
 import 'package:mec_management_app/UI/EEEfaculty.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/about': (context) => aboutPage(),
         '/home': (context) => HomePage(),
+        '/frontPage': (context) => frontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
         '/faculty': (context) => Branches(),
