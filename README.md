@@ -15,6 +15,9 @@ Todo :
 9. Holidays (parents and students login) (DONE) .
 10. Create post page (Almost Done - Should add post function) .
 11. Events page ( Should upload Aether pics , Traditional day and events conducted ) .
-13. CCD shop ( Ordering Online and payment online ) (Front page Done )
 14. Hostel room service ( Not needed Ig only helpline numbers will be enough) .
 15. Professors location (DONE)
+
+CCD PAGE
+- Coffee page (DONE) Remaining items page left and giving root is left
+- payment online mode (Remaining)
