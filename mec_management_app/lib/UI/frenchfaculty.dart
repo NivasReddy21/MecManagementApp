@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<CSEFacultyPage> {
+class _FacultyPageState extends State<frenchFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -18,8 +18,8 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           color: Colors.black.withOpacity(0.6),
         ),
         image: '',
-        name: 'KUMUDHAM BALASUBRAMANIAN',
-        number: 'kumudham.balasubramanian@mechyd.ac.in',
+        name: 'KUMUDHAM \nBALASUBRAMANIAN',
+        number: 'kumudham.balasubramanian\n@mechyd.ac.in',
         company: Text(
           'FRENCH',
           textAlign: TextAlign.right,
@@ -106,7 +106,8 @@ class _FacultyPageState extends State<CSEFacultyPage> {
   }
 }
 
-class CSEFacultyPage extends StatefulWidget {
+// ignore: camel_case_types
+class frenchFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }
