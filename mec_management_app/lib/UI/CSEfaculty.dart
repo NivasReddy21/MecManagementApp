@@ -330,7 +330,7 @@ class FacultyCard extends StatelessWidget {
                 Shadow(
                   color: Colors.blue,
                   blurRadius: 10.0,
-                  offset: Offset(5.0,5.0),
+                  offset: Offset(5.0, 5.0),
                 ),
               ],
             ),
