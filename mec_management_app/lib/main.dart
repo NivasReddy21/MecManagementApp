@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
-        '/faculty': (context) => Branches()
+        '/faculty': (context) => Branches(),
       },
     );
   }

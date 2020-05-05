@@ -1,3 +1,5 @@
+
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mec_management_app/services/posts_management.dart';
 
@@ -109,25 +111,26 @@ final events = [
 
 void addPost() {
   if (postData != null) {
-    print('Working in addPost');
     for (int i = 0; i < postData.documents.length; i++) {
-      final post = Event(
-        imagePath: "assets/event_images/golf_competition.jpeg",
-        title: postData.documents[i].data['title'],
-        description: postData.documents[i].data['description'],
-        location: postData.documents[i].data['location'],
-        duration: postData.documents[i].data['duration'],
-        punchLine1: postData.documents[i].data['punchline1'],
-        punchLine2: postData.documents[i].data['punchline2'],
-        galleryImages: [
-          "assets/event_images/cooking_1.jpeg",
-          "assets/event_images/cooking_2.jpeg",
-          "assets/event_images/cooking_3.jpeg"
-        ],
-        categoryIds: postData.documents[i].data['category'],
-      );
-      print('added post');
-      events.add(post);
+      if (!events.contains(Event(title: postData.documents[i].data['title']))) {
+        final post = Event(
+          imagePath: "assets/event_images/golf_competition.jpeg",
+          title: postData.documents[i].data['title'],
+          description: postData.documents[i].data['description'],
+          location: postData.documents[i].data['location'],
+          duration: postData.documents[i].data['duration'],
+          punchLine1: postData.documents[i].data['punchline1'],
+          punchLine2: postData.documents[i].data['punchline2'],
+          galleryImages: [
+            "assets/event_images/cooking_1.jpeg",
+            "assets/event_images/cooking_2.jpeg",
+            "assets/event_images/cooking_3.jpeg"
+          ],
+          categoryIds: postData.documents[i].data['category'],
+        );
+        print('added post');
+        events.add(post);
+      }
     }
   } else {
     print('Empty');

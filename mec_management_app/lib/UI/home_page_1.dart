@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/homePage/app_state.dart';
@@ -9,6 +12,7 @@ import 'homePage/ui/event_details/event_details_page.dart';
 import 'homePage/ui/homepage/category_widget.dart';
 import 'homePage/ui/homepage/event_widget.dart';
 import 'homePage/ui/homepage/home_page_background.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -26,6 +30,14 @@ class _HomePageState extends State<HomePage>
   Animation<double> _menuScaleAnimation;
   String userName;
   String displayUrl;
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
+      GlobalKey<RefreshIndicatorState>();
+
+  static int refreshNum = 10; // number that changes when refreshed
+  Stream<int> counterStream =
+      Stream<int>.periodic(Duration(seconds: 3), (x) => refreshNum);
 
   @override
   void initState() {

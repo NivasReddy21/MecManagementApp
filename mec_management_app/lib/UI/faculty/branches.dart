@@ -6,13 +6,17 @@ class Branches extends StatefulWidget {
 }
 
 class _Branches extends State<Branches> {
-  List<String> _list = [
-    'Computer Science',
-    "Mechanical",
-    "Electrical",
-    "Civil",
-    "Humanities",
-    "French"
+  List<List<String>> _list = [
+    ['Computer Science', '/cse'],
+    ["Mechanical", '/mech'],
+    ["Electrical", '/eee'],
+    ["Civil", '/civil'],
+    ["Humanities", '/humanities'],
+    ["French", '/french'],
+    ["Economics", '/economics'],
+    ["Maths", '/math'],
+    ["Physics", '/phy'],
+    ["Chemistry", '/chemistry']
   ].toList();
   Duration _duration = Duration(milliseconds: 300);
 
@@ -24,11 +28,12 @@ class _Branches extends State<Branches> {
                 height: MediaQuery.of(context).size.height,
                 child: new ListViewEffect(
                     duration: _duration,
-                    children:
-                        _list.map((s) => _buildWidgetExample(s)).toList()))));
+                    children: _list
+                        .map((s) => _buildWidgetExample(s[0], s[1]))
+                        .toList()))));
   }
 
-  Widget _buildWidgetExample(String text) {
+  Widget _buildWidgetExample(String text, String route) {
     return InkWell(
       child: new Container(
         decoration: BoxDecoration(
@@ -45,7 +50,9 @@ class _Branches extends State<Branches> {
           ),
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.pushReplacementNamed(context, route);
+      },
     );
   }
 }
