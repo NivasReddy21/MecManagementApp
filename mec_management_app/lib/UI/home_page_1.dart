@@ -107,9 +107,9 @@ class _HomePageState extends State<HomePage>
                 ),
                 SizedBox(height: 70),
                 menuButtons(
-                    route: '/intro',
-                    icon: Icons.label_important,
-                    name: 'Introduction'),
+                    route: '/about',
+                    icon: Icons.beenhere,
+                    name: 'About'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Clubs Info',
@@ -128,6 +128,9 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Faculty', icon: Icons.people, route: '/faculty'),
+                SizedBox(height: 15),
+                menuButtons(
+                    name: 'Confessions', icon: Icons.edit, route: '/confessions'),
                 SizedBox(height: 150),
                 FlatButton.icon(
                     onPressed: () {

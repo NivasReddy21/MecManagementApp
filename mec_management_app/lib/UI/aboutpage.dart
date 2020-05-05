@@ -4,16 +4,16 @@ import 'dart:math';
 
 
 // ignore: camel_case_types
-class introPage extends StatefulWidget {
+class aboutPage extends StatefulWidget {
   @override
-  _introPage createState() => new _introPage();
+  _aboutPage createState() => new _aboutPage();
 }
 
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 
 // ignore: camel_case_types
-class _introPage extends State<introPage> {
+class _aboutPage extends State<aboutPage> {
   var currentPage = images.length - 1.0;
 
   @override
@@ -54,7 +54,7 @@ class _introPage extends State<introPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Know About Our App",
+                    Text("About Page",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 26.0,
@@ -151,7 +151,7 @@ class _introPage extends State<introPage> {
                     padding: EdgeInsets.only(left: 18.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset("assets/img/secondImage.png",
+                      child: Image.asset("assets/img/developers.png",
                           width: 200.0, height: 200.0),
                     ),
                   )

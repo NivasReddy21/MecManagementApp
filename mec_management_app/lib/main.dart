@@ -13,7 +13,7 @@ import 'package:mec_management_app/UI/login_page.dart';
 
 import 'UI/chemistryfaculty.dart';
 import 'UI/holidays/holidays_listing_screen.dart';
-import 'UI/intropage.dart';
+import 'UI/aboutpage.dart';
 import 'package:mec_management_app/UI/frenchfaculty.dart';
 
 
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
-        '/intro': (context) => introPage(),
+        '/about': (context) => aboutPage(),
         '/home': (context) => HomePage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
