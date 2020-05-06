@@ -9,7 +9,7 @@ class UserManagement {
       'uid': user.uid,
       'userName': user.displayName
     }).then((value) {
-      Navigator.popAndPushNamed(context, '/home');
+      Navigator.popAndPushNamed(context, '/loading');
     }).catchError((e) {
       print(e);
     });

@@ -1,18 +1,12 @@
 import 'dart:async';
-import 'dart:math';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mec_management_app/UI/homePage/app_state.dart';
-import 'package:provider/provider.dart';
-import 'homePage/model/category.dart';
-import 'homePage/model/event.dart';
-import 'homePage/styleguide.dart';
-import 'homePage/ui/event_details/event_details_page.dart';
-import 'homePage/ui/homepage/category_widget.dart';
-import 'homePage/ui/homepage/event_widget.dart';
-import 'homePage/ui/homepage/home_page_background.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:mec_management_app/UI/homePage/app_state.dart';
+import 'package:mec_management_app/services/userDetails.dart';
+import 'package:provider/provider.dart';
+import 'homePage/styleguide.dart';
+import 'homePage/ui/homepage/home_page_background.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,6 +15,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  Map postDataObj;
+  List postData;
+
   bool isCollapsed = true;
   double screenWidth, screenHeight;
   Duration duration = const Duration(milliseconds: 300);
@@ -31,18 +28,13 @@ class _HomePageState extends State<HomePage>
   String userName;
   String displayUrl;
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-      GlobalKey<RefreshIndicatorState>();
-
   static int refreshNum = 10; // number that changes when refreshed
   Stream<int> counterStream =
       Stream<int>.periodic(Duration(seconds: 3), (x) => refreshNum);
 
   @override
   void initState() {
-    getUser();
-    getDocs();
+    UserDetails().getUser();
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
@@ -59,6 +51,8 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    postDataObj = ModalRoute.of(context).settings.arguments;
+    postData = postDataObj['postData'];
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -67,7 +61,7 @@ class _HomePageState extends State<HomePage>
       body: Stack(
         children: <Widget>[
           menu(context),
-          dashBoard(context),
+          dashBoard(context, postData),
         ],
       ),
     );
@@ -107,9 +101,7 @@ class _HomePageState extends State<HomePage>
                 ),
                 SizedBox(height: 70),
                 menuButtons(
-                    route: '/intro',
-                    icon: Icons.label_important,
-                    name: 'Introduction'),
+                    route: '/about', icon: Icons.beenhere, name: 'About'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Clubs Info',
@@ -128,6 +120,14 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Faculty', icon: Icons.people, route: '/faculty'),
+                SizedBox(height: 15),
+                menuButtons(
+                    name: 'Confessions',
+                    icon: Icons.edit,
+                    route: '/confessions'),
+                SizedBox(height: 15),
+                menuButtons(
+                    name: 'CCD', icon: Icons.local_cafe, route: '/frontPage'),
                 SizedBox(height: 150),
                 FlatButton.icon(
                     onPressed: () {
@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  Widget dashBoard(context) {
+  Widget dashBoard(context, List postData) {
     return AnimatedPositioned(
       duration: duration,
       top: 0,
@@ -181,96 +181,64 @@ class _HomePageState extends State<HomePage>
                     screenHeight: MediaQuery.of(context).size.height,
                   ),
                   SafeArea(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 12.0),
-                            child: Row(
-                              children: <Widget>[
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.menu,
-                                    color: Color(0x99FFFFFF),
-                                    size: 35,
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      if (isCollapsed)
-                                        _controller.forward();
-                                      else
-                                        _controller.reverse();
-
-                                      isCollapsed = !isCollapsed;
-                                    });
-                                  },
-                                ),
-                                Spacer(),
-                                Text(
-                                  "Mahindra Ecole Centrale",
-                                  style: fadedTextStyle,
-                                ),
-                                Spacer(),
-                                Icon(
-                                  Icons.person_outline,
-                                  color: Color(0x99FFFFFF),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 32.0),
-                            child: Text(
-                              "MEC Feed",
-                              style: whiteHeadingTextStyle,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 24.0),
-                            child: Consumer<AppState>(
-                              builder: (context, appState, _) =>
-                                  SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  children: <Widget>[
-                                    for (final category in categories)
-                                      CategoryWidget(category: category)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: Consumer<AppState>(
-                              builder: (context, appState, _) => Column(
+                    child: LiquidPullToRefresh(
+                      onRefresh: handleRefresh,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12.0),
+                              child: Row(
                                 children: <Widget>[
-                                  for (final event in events.where((e) => e
-                                      .categoryIds
-                                      .contains(appState.selectedCategoryId)))
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                EventDetailsPage(event: event),
-                                          ),
-                                        );
-                                      },
-                                      child: EventWidget(
-                                        event: event,
-                                      ),
-                                    )
+                                  IconButton(
+                                    icon: Icon(
+                                      Icons.menu,
+                                      color: Color(0x99FFFFFF),
+                                      size: 35,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        if (isCollapsed)
+                                          _controller.forward();
+                                        else
+                                          _controller.reverse();
+
+                                        isCollapsed = !isCollapsed;
+                                      });
+                                    },
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    "Mahindra Ecole Centrale",
+                                    style: fadedTextStyle,
+                                  ),
+                                  Spacer(),
+                                  Icon(
+                                    Icons.person_outline,
+                                    color: Color(0x99FFFFFF),
+                                    size: 30,
+                                  ),
                                 ],
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 32.0),
+                              child: Text(
+                                "MEC Feed",
+                                style: whiteHeadingTextStyle,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: Column(
+                                  children: postCards(postData),
+                                )),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -302,19 +270,79 @@ class _HomePageState extends State<HomePage>
         ));
   }
 
-  Future<FirebaseUser> getUser() async {
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    getUserName(user);
-    return user;
+  // Widget postList(List postData) {
+  //   if (postData != null) {
+  //     return ListView.builder(
+  //       itemCount: postData.length,
+  //       padding: EdgeInsets.all(5),
+  //       itemBuilder: (context, i) {
+  //         return postCards(postData, i);
+  //       },
+  //     );
+  //   } else {
+  //     return Text('Loading....');
+  //   }
+  // }
+
+  List<Widget> postCards(List postData) {
+    List<Widget> cards = [];
+
+    for (int i = 0; i < postData.length; i++) {
+      cards.add(Card(
+        margin: const EdgeInsets.symmetric(vertical: 20),
+        elevation: 4,
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(24))),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                child: Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVeQYN3ugmK2GH-MKXtQUf9m-537SIOCUobDG7xJeiutHTsyRN&usqp=CAU',
+                  height: 150,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, left: 8.0),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            postData[i]['title'],
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ));
+    }
+    return cards;
   }
 
-  void getUserName(FirebaseUser user) {
-    if (user.displayName != null) {
-      userName = user.displayName;
-    } else {
-      userName = 'Loading...';
-      getUser();
-    }
-    displayUrl = user.photoUrl;
+  Future<void> handleRefresh() async {
+    Navigator.popAndPushNamed(context, '/loading');
   }
 }

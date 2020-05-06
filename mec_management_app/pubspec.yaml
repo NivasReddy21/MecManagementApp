@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.16.1
   datetime_picker_formfield: ^1.0.0
   after_layout: ^1.0.7+2
+  flutter_icons: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -109,5 +110,23 @@ flutter:
           weight: 600
         - asset: assets/font/WorkSans-Bold.ttf
           weight: 700
+
+    - family: Oswald
+      fonts:
+        - asset: assets/font/Oswald-Regular.ttf
+
+    - family: Montserrat
+      fonts:
+        - asset: assets/font/Montserrat-Regular.ttf
+
+    - family: varela
+      fonts:
+        - asset: assets/font/VarelaRound-Regular.ttf
+
+    - family: nunito
+      fonts:
+        - asset: assets/font/Nunito-Regular.ttf
+        - asset: assets/font/Nunito-Light.ttf
+          weight: 300
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

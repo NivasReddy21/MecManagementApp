@@ -1,7 +1,7 @@
 List<String> images = [
-  "assets/img/image3.png",
-  "assets/img/image2.png",
-  "assets/img/image.png",
+  "assets/img/fourthimage.png",
+  "assets/img/anurag.png",
+  "assets/img/Nivas.png",
   "assets/img/MEC.png",
 ];
 

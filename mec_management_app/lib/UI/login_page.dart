@@ -306,7 +306,7 @@ class _LoginPageState extends State<LoginPage>
                           ),
                           onChanged: (value) {
                             setState(() {
-                              signInPassword = value;
+                              signInPassword = value.toString().trim();
                             });
                           },
                         ),
@@ -361,10 +361,8 @@ class _LoginPageState extends State<LoginPage>
                           .signInWithEmailAndPassword(
                               email: signInEmail, password: signInPassword)
                           .then((signedUser) {
-                        showInSnackBar("Login Successfull");
                         Navigator.of(context).pop();
-                        Navigator.of(context).pushReplacementNamed('/home',
-                            arguments: {'userObj': signedUser.user});
+                        Navigator.of(context).pushReplacementNamed('/loading');
                       }).catchError((e) {
                         print(e);
                       });

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:mec_management_app/UI/clubs_page.dart';
 
 import 'package:mec_management_app/UI/home_page_1.dart';
+import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 
+import 'UI/CCD/frontpage.dart';
+import 'UI/aboutpage.dart';
 import 'UI/faculty_members/CIVILfaculty.dart';
 import 'UI/faculty_members/CSEfaculty.dart';
 import 'UI/faculty_members/EEEfaculty.dart';
@@ -15,7 +17,6 @@ import 'UI/faculty_members/Physicsfaculty.dart';
 import 'UI/faculty_members/chemistryfaculty.dart';
 import 'UI/faculty_members/faculty/branches.dart';
 import 'UI/holidays/holidays_listing_screen.dart';
-import 'UI/intropage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -28,11 +29,12 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
       ),
-      initialRoute: '/home',
+      initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
-        '/intro': (context) => introPage(),
+        '/about': (context) => aboutPage(),
         '/home': (context) => HomePage(),
+        '/frontPage': (context) => frontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
         '/faculty': (context) => Branches(),
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/math': (context) => MathFacultyPage(),
         '/mech': (context) => MechFacultyPage(),
         '/phy': (context) => PhysicsFacultyPage(),
+        '/loading': (context) => LoadingScreen(),
       },
     );
   }
