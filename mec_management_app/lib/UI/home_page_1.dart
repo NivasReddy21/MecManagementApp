@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:mec_management_app/UI/homePage/app_state.dart';
@@ -120,11 +121,6 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Faculty', icon: Icons.people, route: '/faculty'),
-                SizedBox(height: 15),
-                menuButtons(
-                    name: 'Confessions',
-                    icon: Icons.edit,
-                    route: '/confessions'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'CCD', icon: Icons.local_cafe, route: '/frontPage'),
@@ -311,22 +307,26 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0, left: 8.0),
+                padding: const EdgeInsets.only(top: 1.0, left: 8.0),
                 child: Row(
                   children: <Widget>[
                     Expanded(
                       flex: 3,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+                          Text(postData[i]['title'],
+                          style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold,
+                          ),),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
                             postData[i]['title'],
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
+                                fontSize: 15, fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
