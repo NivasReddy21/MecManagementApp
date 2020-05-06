@@ -17,7 +17,7 @@ router
                 list.push(elem.val());
             })
 
-            res.send(list);
+            res.json(list);
 
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);

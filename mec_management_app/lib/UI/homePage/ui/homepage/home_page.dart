@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
                                   );
                                 },
                                 child: EventWidget(
-                                  event: event,
+                                  event: Event(),
                                 ),
                               )
                           ],

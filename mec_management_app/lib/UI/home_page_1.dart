@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage>
                       width: 7,
                     ),
                     Text(
-                      userName,
+                      'Jon Snow',
                       style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,

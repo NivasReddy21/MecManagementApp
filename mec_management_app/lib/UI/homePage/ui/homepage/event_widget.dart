@@ -38,40 +38,16 @@ class EventWidget extends StatelessWidget {
                   Expanded(
                     flex: 3,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           event.title,
                           style: eventTitleTextStyle,
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        FittedBox(
-                          child: Row(
-                            children: <Widget>[
-                              Icon(Icons.location_on),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                event.location,
-                                style: eventLocationTextStyle,
-                              ),
-                            ],
-                          ),
-                        ),
                       ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Text(
-                      event.duration.toUpperCase(),
-                      textAlign: TextAlign.right,
-                      style: eventLocationTextStyle.copyWith(
-                        fontWeight: FontWeight.w900,
-                      ),
                     ),
                   ),
                 ],

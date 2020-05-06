@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:mec_management_app/UI/CIVILfaculty.dart';
-import 'package:mec_management_app/UI/CSEfaculty.dart';
-import 'package:mec_management_app/UI/EEEfaculty.dart';
-import 'package:mec_management_app/UI/Humanitiesfaculty.dart';
-import 'package:mec_management_app/UI/MECHfaculty.dart';
-import 'package:mec_management_app/UI/Mathsfaculty.dart';
-import 'package:mec_management_app/UI/Physicsfaculty.dart';
+
 import 'package:mec_management_app/UI/clubs_page.dart';
-import 'package:mec_management_app/UI/faculty/branches.dart';
+
 import 'package:mec_management_app/UI/home_page_1.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 
-import 'UI/chemistryfaculty.dart';
+import 'UI/faculty_members/CIVILfaculty.dart';
+import 'UI/faculty_members/CSEfaculty.dart';
+import 'UI/faculty_members/EEEfaculty.dart';
+import 'UI/faculty_members/Humanitiesfaculty.dart';
+import 'UI/faculty_members/MECHfaculty.dart';
+import 'UI/faculty_members/Mathsfaculty.dart';
+import 'UI/faculty_members/Physicsfaculty.dart';
+import 'UI/faculty_members/chemistryfaculty.dart';
+import 'UI/faculty_members/faculty/branches.dart';
 import 'UI/holidays/holidays_listing_screen.dart';
 import 'UI/intropage.dart';
-import 'package:mec_management_app/UI/frenchfaculty.dart';
-
 
 void main() => runApp(new MyApp());
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
       ),
-      initialRoute: '/login',
+      initialRoute: '/home',
       routes: {
         '/login': (context) => LoginPage(),
         '/intro': (context) => introPage(),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/humanities': (context) => humanitiesFacultyPage(),
         '/math': (context) => MathFacultyPage(),
         '/mech': (context) => MechFacultyPage(),
-        '/phy' : (context) => PhysicsFacultyPage(),
+        '/phy': (context) => PhysicsFacultyPage(),
       },
     );
   }

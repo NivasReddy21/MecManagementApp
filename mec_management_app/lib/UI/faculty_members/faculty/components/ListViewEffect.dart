@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mec_management_app/UI/faculty/bloc/listBloc.dart';
+import 'package:mec_management_app/UI/faculty_members/faculty/bloc/listBloc.dart';
 
 import 'ItemEffect.dart';
 
