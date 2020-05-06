@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mec_management_app/UI/CCD/Tea/teapage.dart';
+import 'package:mec_management_app/UI/CCD/chocoshot/chocoshot.dart';
 import 'package:mec_management_app/UI/CCD/coffee/coffeepage.dart';
+import 'package:mec_management_app/UI/CCD/maggi/maggipage.dart';
+
+import 'Donuts/donutspage.dart';
+import 'Juice/juicepage.dart';
+import 'PUFF/puffpage.dart';
+import 'Pastry/Pastrypage.dart';
 
 // ignore: camel_case_types
 class frontPage extends StatefulWidget {
@@ -93,23 +101,23 @@ class _FrontPageState extends State<frontPage> {
           ),
           //Get out of the stack for the options
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            _buildMenuItem('PUFF', Icons.fastfood, COFFEE()),
-            _buildMenuItem('TEA', Icons.local_drink, COFFEE()),
-            _buildMenuItem('JUICE', Icons.local_drink, COFFEE()),
+            _buildMenuItem('PUFF', Icons.fastfood, PUFF()),
+            _buildMenuItem('TEA', Icons.local_drink, TEA()),
+            _buildMenuItem('JUICE', Icons.local_drink, JUICE()),
           ]),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              _buildMenuItem('PASTRY', Icons.cake, COFFEE()),
+              _buildMenuItem('PASTRY', Icons.cake, PASTRY()),
               _buildMenuItem('COFFEE', Icons.cloud, COFFEE()),
-              _buildMenuItem('CHOCOSHOT', Icons.restaurant, COFFEE()),
+              _buildMenuItem('CHOCOSHOT', Icons.restaurant, CHOCOSHOT()),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              _buildMenuItem('MAGGI', Icons.insert_chart, COFFEE()),
-              _buildMenuItem('DONUTS', Icons.donut_small, COFFEE()),
+              _buildMenuItem('MAGGI', Icons.insert_chart, MAGGI()),
+              _buildMenuItem('DONUTS', Icons.donut_small, DONUTS()),
             ],
           )
         ],
@@ -125,7 +133,7 @@ class _FrontPageState extends State<frontPage> {
         },
         child: AnimatedContainer(
             curve: Curves.easeIn,
-            duration: Duration(milliseconds: 300),
+            duration: Duration(milliseconds: 100),
             height: selectedFood == foodName ? 100.0 : 75.0,
             width: selectedFood == foodName ? 100.0 : 75.0,
             color: selectedFood == foodName
