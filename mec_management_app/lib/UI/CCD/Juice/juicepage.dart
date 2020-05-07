@@ -18,23 +18,12 @@ class _JUICEPageState extends State<JUICE> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Welcome, Anurag',
+                Text('Welcome, Back',
                     style: TextStyle(
                         fontFamily: 'varela',
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF473D3A))),
-                Padding(
-                    padding: EdgeInsets.only(right: 15.0),
-                    child: Container(
-                      height: 40.0,
-                      width: 40.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          image: DecorationImage(
-                              image: AssetImage('assets/img/model.jpg'),
-                              fit: BoxFit.cover)),
-                    ))
               ],
             ),
             SizedBox(height: 10.0),
@@ -93,9 +82,8 @@ class _JUICEPageState extends State<JUICE> {
             Container(
                 height: 125.0,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
-                  _buildImage('assets/img/coffee.jpg'),
-                  _buildImage('assets/img/coffee2.jpg'),
-                  _buildImage('assets/img/coffee3.jpg')
+                  _buildImage('assets/img/juice.jpg'),
+                  _buildImage('assets/img/juice1.jpg')
                 ])),
             SizedBox(height: 20.0)
           ],

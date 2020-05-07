@@ -39,6 +39,7 @@ dependencies:
   datetime_picker_formfield: ^1.0.0
   after_layout: ^1.0.7+2
   flutter_icons: ^0.2.0
+  email_validator: ^1.0.4
 
 dev_dependencies:
   flutter_test:

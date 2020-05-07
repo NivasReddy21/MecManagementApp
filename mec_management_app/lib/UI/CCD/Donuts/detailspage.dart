@@ -61,20 +61,20 @@ class _DetailsPageState extends State<DetailsPage> {
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   buildIngredientItem(
-                                      'Water',
+                                      'Choclate',
                                       Icon(Feather.getIconData('droplet'),
                                           size: 10.0, color: Colors.white),
                                       Color(0xFF6FC5DA)),
                                   buildIngredientItem(
-                                      'Brewed Espresso',
+                                      'Sugar',
                                       Icon(Feather.getIconData("target"), size: 18.0, color: Colors.white),
                                       Color(0xFF615955)),
                                   buildIngredientItem(
-                                      'Sugar',
+                                      'Toffee Nut Syrup',
                                       Icon(Feather.getIconData("box"), size: 18.0, color: Colors.white),
                                       Color(0xFFF39595)),
                                   buildIngredientItem(
-                                      'Toffee Nut Syrup',
+                                      'Nutellaa',
                                       Icon(MaterialCommunityIcons.getIconData("peanut-outline"), size: 18.0, color: Colors.white),
                                       Color(0xFF8FC28A)),
                                   buildIngredientItem(
@@ -82,7 +82,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                       Icon(MaterialCommunityIcons.getIconData("leaf-maple"), size: 18.0, color: Colors.white),
                                       Color(0xFF3B8079)),
                                   buildIngredientItem(
-                                      'Vanilla Syrup',
+                                      'Nuts',
                                       Icon(MaterialCommunityIcons.getIconData("flower-tulip-outline"), size: 18.0, color: Colors.white),
                                       Color(0xFFF8B870)),
                                   SizedBox(width: 25.0)
@@ -228,7 +228,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: <Widget>[
                                 Container(
                                   width: 150.0,
-                                  child: Text('MOKA',
+                                  child: Text('DONUTS',
                                       style: TextStyle(
                                           fontFamily: 'varela',
                                           fontSize: 30.0,
@@ -254,7 +254,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             SizedBox(height: 10.0),
                             Container(
                               width: 170.0,
-                              child: Text('Freshly steamed milk with choclate-flavored syrup is marked with espresso and topped with caramel drizzle for an oh-so-sweet finish.',
+                              child: Text('A doughnut or donut is a type of fried dough confection or dessert food. The doughnut is popular in many countries and is prepared in various forms as a sweet snack',
                                   style: TextStyle(
                                       fontFamily: 'nunito',
                                       fontSize: 13.0,
@@ -276,7 +276,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Text('4.2',
+                                              Text('4.5',
                                                   style: TextStyle(
                                                       fontFamily: 'nunito',
                                                       fontSize: 13.0,

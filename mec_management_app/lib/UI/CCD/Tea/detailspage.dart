@@ -66,25 +66,17 @@ class _DetailsPageState extends State<DetailsPage> {
                                           size: 10.0, color: Colors.white),
                                       Color(0xFF6FC5DA)),
                                   buildIngredientItem(
-                                      'Brewed Espresso',
+                                      'Tea Powder',
                                       Icon(Feather.getIconData("target"), size: 18.0, color: Colors.white),
                                       Color(0xFF615955)),
                                   buildIngredientItem(
-                                      'Sugar',
+                                      'Honey',
                                       Icon(Feather.getIconData("box"), size: 18.0, color: Colors.white),
                                       Color(0xFFF39595)),
                                   buildIngredientItem(
-                                      'Toffee Nut Syrup',
+                                      'Lemon',
                                       Icon(MaterialCommunityIcons.getIconData("peanut-outline"), size: 18.0, color: Colors.white),
                                       Color(0xFF8FC28A)),
-                                  buildIngredientItem(
-                                      'Natural Flavors',
-                                      Icon(MaterialCommunityIcons.getIconData("leaf-maple"), size: 18.0, color: Colors.white),
-                                      Color(0xFF3B8079)),
-                                  buildIngredientItem(
-                                      'Vanilla Syrup',
-                                      Icon(MaterialCommunityIcons.getIconData("flower-tulip-outline"), size: 18.0, color: Colors.white),
-                                      Color(0xFFF8B870)),
                                   SizedBox(width: 25.0)
 
                                 ])),
@@ -228,7 +220,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: <Widget>[
                                 Container(
                                   width: 150.0,
-                                  child: Text('MOKA',
+                                  child: Text('TEA',
                                       style: TextStyle(
                                           fontFamily: 'varela',
                                           fontSize: 30.0,
@@ -254,7 +246,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             SizedBox(height: 10.0),
                             Container(
                               width: 170.0,
-                              child: Text('Freshly steamed milk with choclate-flavored syrup is marked with espresso and topped with caramel drizzle for an oh-so-sweet finish.',
+                              child: Text('Freshly steamed water with tea bags .',
                                   style: TextStyle(
                                       fontFamily: 'nunito',
                                       fontSize: 13.0,
@@ -276,7 +268,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Text('4.2',
+                                              Text('4.0',
                                                   style: TextStyle(
                                                       fontFamily: 'nunito',
                                                       fontSize: 13.0,
