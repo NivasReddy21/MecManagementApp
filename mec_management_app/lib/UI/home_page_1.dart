@@ -110,9 +110,9 @@ class _HomePageState extends State<HomePage>
                     route: '/clubs'),
                 SizedBox(height: 15),
                 menuButtons(
-                    name: 'Time Table',
+                    name: 'TeachAndLearn',
                     icon: Icons.calendar_view_day,
-                    route: '/timetable'),
+                    route: '/mainpage'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Holidays',

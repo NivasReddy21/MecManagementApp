@@ -4,6 +4,7 @@ import 'package:mec_management_app/UI/clubs_page.dart';
 import 'package:mec_management_app/UI/home_page_1.dart';
 import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
+import 'package:mec_management_app/UI/teachandlearn/mainpage.dart';
 
 import 'UI/CCD/frontpage.dart';
 import 'UI/aboutpage.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/about': (context) => aboutPage(),
         '/home': (context) => HomePage(),
+        '/mainpage': (context) => mainPage(),
         '/frontPage': (context) => frontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
