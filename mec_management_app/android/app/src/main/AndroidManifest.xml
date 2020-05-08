@@ -11,9 +11,6 @@
         android:label="mec_management_app"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
-            android:name="portrait"
-            android:name="@style/Theme.AppCompat.Light.NoActionBar"
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'TeachAndLearn',
-                    icon: Icons.calendar_view_day,
+                    icon: Icons.assignment,
                     route: '/mainpage'),
                 SizedBox(height: 15),
                 menuButtons(
@@ -286,19 +286,19 @@ class _HomePageState extends State<HomePage>
     for (int i = 0; i < postData.length; i++) {
       cards.add(Card(
         margin: const EdgeInsets.symmetric(vertical: 20),
-        elevation: 4,
+        elevation: 10,
         color: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(24))),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(15,15,15,30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+                  Radius.circular(20),
                 ),
                 child: Image.asset(
                   'assets/img/fall.jpg',

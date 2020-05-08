@@ -29,9 +29,8 @@ class MyApp extends StatelessWidget {
       title: 'Mahindra Ecole Centrale',
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
-        brightness: Brightness.dark,
       ),
-      initialRoute: '/uploadPage',
+      initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
