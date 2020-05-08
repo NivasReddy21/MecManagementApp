@@ -61,7 +61,6 @@ class _FacultyPageState extends State<CSEFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -209,7 +208,7 @@ class _FacultyPageState extends State<CSEFacultyPage> {
             gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
-                colors: [kBlue, kPurple],
+                colors: [Colors.grey[800], Colors.white],
       )),
         image: '',
         name: 'SUNNY RAI',

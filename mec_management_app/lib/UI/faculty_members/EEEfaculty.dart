@@ -14,9 +14,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
 
     _facultiesCards = [
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.blue, Colors.red]
+      )),
         image: '',
         name: 'ADITYA ABBURI',
         number: 'aditya.abburi@mechyd.ac.in',
@@ -31,9 +34,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+         begin: Alignment.topLeft,
+         end: Alignment.bottomRight,
+         colors: [Colors.purple[800], Colors.red]
+       )),
         image: '',
         name: 'BHARGAVA RAJARAM',
         number: 'bhargava.rajaram@mechyd.ac.in',
@@ -53,7 +59,6 @@ class _FacultyPageState extends State<EEEFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -71,8 +76,11 @@ class _FacultyPageState extends State<EEEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+          gradient: LinearGradient(
+         begin: Alignment.topLeft,
+         end: Alignment.bottomRight,
+         colors: [Colors.indigo[800], Colors.indigo[200]]
+      )),
         image: '',
         name: 'J.L BHATTACHARYA',
         number: 'jayantlal.bhattacharya@mechyd.ac.in',
@@ -87,9 +95,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.deepOrange, Colors.lightGreenAccent]
+    )),
         image: '',
         name: 'KRISHNA CHAITANYA BULUSU',
         number: 'krishnachaitanya.bulusu@mechyd.ac.in',
@@ -108,8 +119,7 @@ class _FacultyPageState extends State<EEEFacultyPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
+              colors: [Colors.red[900], Colors.grey[800]],
           ),
         ),
         image: '',
@@ -126,9 +136,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+       gradient: LinearGradient(
+       begin: Alignment.topLeft,
+       end: Alignment.bottomRight,
+       colors: [Colors.blue, Colors.red]
+    )),
         image: '',
         name: 'SREEDHAR MADICHETTY',
         number: 'sreedhar.madichetty@mechyd.ac.in',
@@ -143,9 +156,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+          decoration: BoxDecoration(
+    gradient: LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Colors.purple[800], Colors.red]
+    )),
         image: '',
         name: 'SUBBARAO BODDU',
         number: 'subbarao.boddu@mechyd.ac.in',
@@ -182,9 +198,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+    decoration: BoxDecoration(
+    gradient: LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [Colors.grey[800], Colors.white],
+    )),
         image: '',
         name: 'K.R SHARMA',
         number: 'kalluri.ramalingasarma@mechyd.ac.in',
@@ -204,6 +223,19 @@ class _FacultyPageState extends State<EEEFacultyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'MEC FACULTY',
+          style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 1.0,
+          ),
+        ),
+        toolbarOpacity: 0,
+        backgroundColor: Color(0xFF1b1e44),
+      ),
+      backgroundColor: Colors.deepOrange[100],
       body: Center(
         child: PageView.builder(
           controller: _pageController,
@@ -291,6 +323,7 @@ class FacultyCard extends StatelessWidget {
           Text(
             'FACULTY',
             style: TextStyle(
+              color: Colors.white,
               fontSize: 15,
               shadows: [
                 Shadow(
