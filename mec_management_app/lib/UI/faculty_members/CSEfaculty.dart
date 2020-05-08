@@ -124,7 +124,6 @@ class _FacultyPageState extends State<CSEFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [Colors.red[900], Colors.grey[800]],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',

@@ -198,12 +198,12 @@ class _FacultyPageState extends State<EEEFacultyPage> {
         ),
       ),
       FacultyCard(
-    decoration: BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [Colors.grey[800], Colors.white],
-    )),
+       decoration: BoxDecoration(
+          gradient: LinearGradient(
+       begin: Alignment.centerLeft,
+       end: Alignment.centerRight,
+       colors: [Colors.grey[800], Colors.white],
+       )),
         image: '',
         name: 'K.R SHARMA',
         number: 'kalluri.ramalingasarma@mechyd.ac.in',

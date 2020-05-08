@@ -16,10 +16,11 @@ class _Branches extends State<Branches> {
     ["Physics", '/phy'],
     ["Chemistry", '/chemistry']
   ].toList();
-  Duration _duration = Duration(milliseconds: 300);
+  Duration _duration = Duration(milliseconds: 500);
 
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: Color(0xFF1b1e44),
         body: new Container(
             child: new Container(
                 padding: EdgeInsets.all(10),
@@ -35,8 +36,12 @@ class _Branches extends State<Branches> {
     return InkWell(
       child: new Container(
         decoration: BoxDecoration(
-            color: Color(0xFF1b1e44),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.blue[800],Colors.pink,Colors.red, Colors.blue[300],]
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(25))),
         height: 100,
         width: double.infinity,
         margin: EdgeInsets.all(10),
@@ -44,7 +49,7 @@ class _Branches extends State<Branches> {
           child: new Text(
             text,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
           ),
         ),
       ),

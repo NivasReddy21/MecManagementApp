@@ -14,9 +14,12 @@ class _FacultyPageState extends State<MathFacultyPage> {
 
     _facultiesCards = [
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.blue, Colors.red]
+      )),
         image: '',
         name: 'SATYANARAYANA CHIRALA',
         number: 'Satyanarayana.Chirala@mechyd.ac.in',
@@ -31,9 +34,12 @@ class _FacultyPageState extends State<MathFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.purple[800], Colors.red]
+    )),
         image: '',
         name: 'MAHIPAL JETTA',
         number: 'mahipal.jetta@mechyd.ac.in',
@@ -53,7 +59,6 @@ class _FacultyPageState extends State<MathFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -70,9 +75,12 @@ class _FacultyPageState extends State<MathFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.indigo[800], Colors.indigo[200]]
+      )),
         image: '',
         name: 'MANOJ KUMAR YADAV',
         number: 'manojkumar.yadav@mechyd.ac.in',
@@ -88,8 +96,11 @@ class _FacultyPageState extends State<MathFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.deepOrange, Colors.lightGreenAccent]
+    )),
         image: '',
         name: 'RAKHEE BASU',
         number: 'rakhee.basu@mechyd.ac.in',
@@ -108,8 +119,7 @@ class _FacultyPageState extends State<MathFacultyPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
+            colors: [Colors.red[900], Colors.grey[800]],
           ),
         ),
         image: '',
@@ -131,6 +141,18 @@ class _FacultyPageState extends State<MathFacultyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'MEC FACULTY',
+          style: TextStyle(
+            color: Colors.white, letterSpacing: 1.0,
+          ),
+        ),
+        backgroundColor: Color(0xFF1b1e44),
+        toolbarOpacity: 0,
+      ),
+      backgroundColor: Colors.deepOrange[100],
       body: Center(
         child: PageView.builder(
           controller: _pageController,
@@ -218,6 +240,7 @@ class FacultyCard extends StatelessWidget {
           Text(
             'FACULTY',
             style: TextStyle(
+              color: Colors.white,
               fontSize: 15,
               shadows: [
                 Shadow(

@@ -105,11 +105,13 @@ class _ImageCaptureState extends State<ImageCapture> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.blue[800], Colors.blue[200]]
+              colors: [Colors.indigo[800], Colors.indigo[200]]
             ),
           ),
         ),
       ),
+
+      backgroundColor: Colors.red[300],
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: <Widget>[

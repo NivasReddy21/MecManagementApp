@@ -14,9 +14,12 @@ class _FacultyPageState extends State<civilFacultyPage> {
 
     _facultiesCards = [
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+         begin: Alignment.topLeft,
+         end: Alignment.bottomRight,
+         colors: [Colors.blue, Colors.red]
+      )),
         image: '',
         name: 'ATAULLAH KHAN',
         number: 'mohdataullah.khan@mechyd.ac.in',
@@ -31,9 +34,12 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.purple[800], Colors.red]
+    )),
         image: '',
         name: 'AVIRNENI DEEPTHI',
         number: 'deepti.avirneni@mechyd.ac.in',
@@ -53,7 +59,6 @@ class _FacultyPageState extends State<civilFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -70,9 +75,12 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.indigo[800], Colors.indigo[200]]
+      )),
         image: '',
         name: 'HARI PRASAD',
         number: 'hari.chennarapu@mechyd.ac.in',
@@ -87,9 +95,12 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.deepOrange, Colors.lightGreenAccent]
+    )),
         image: '',
         name: 'JAYAPRAKASH VEMURI',
         number: 'jayaprakash.vemuri@mechyd.ac.in',
@@ -108,8 +119,7 @@ class _FacultyPageState extends State<civilFacultyPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
+            colors: [Colors.red[900], Colors.grey[800]],
           ),
         ),
         image: '',
@@ -126,9 +136,12 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.blue, Colors.red]
+    )),
         image: '',
         name: 'SALADI S.V SUBBARAO',
         number: 'saladi.subbarao@mechyd.ac.in',
@@ -143,11 +156,14 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+          decoration: BoxDecoration(
+         gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.purple[800], Colors.red]
+    )),
         image: '',
-        name: 'VENKATA DILIP KUMAR PASUPULETI',
+        name: 'VENKATA DILIP KUMAR ',
         number: 'venkata.pasupuleto@mechyd.ac.in',
         company: Text(
           'DEPT OF\nCIVIL ENGINEERING',
@@ -165,6 +181,18 @@ class _FacultyPageState extends State<civilFacultyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'MEC FACULTY',
+          style: TextStyle(
+            color: Colors.white, letterSpacing: 1.0,
+          ),
+        ),
+        toolbarOpacity: 0,
+        backgroundColor: Color(0xFF1b1e44),
+      ),
+      backgroundColor: Colors.deepOrange[100],
       body: Center(
         child: PageView.builder(
           controller: _pageController,
@@ -253,6 +281,7 @@ class FacultyCard extends StatelessWidget {
           Text(
             'FACULTY',
             style: TextStyle(
+              color: Colors.white,
               fontSize: 15,
               shadows: [
                 Shadow(

@@ -15,8 +15,11 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
     _facultiesCards = [
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+         gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.blue, Colors.red]
+      )),
         image: '',
         name: 'CHITRA GURNANI',
         number: 'chitra.gurnani@mechyd.ac.in',
@@ -31,12 +34,15 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
         ),
       ),
       FacultyCard(
-        decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors: [Colors.purple[800], Colors.red]
+    )),
         image: '',
-        name: 'GOMATHI ANANDHANATARAJAN',
-        number: 'gomathi.anandhanatarajan@mechyd.ac.in',
+        name: 'GOMATHI\nAnandhanatarajan ',
+        number: 'gomathi.anandhanatarajan\n@mechyd.ac.in',
         company: Text(
           'DEPT OF\n CHEMISTRY',
           textAlign: TextAlign.right,
@@ -53,7 +59,6 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -75,6 +80,19 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'MEC FACULTY',
+          style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 1.0,
+          ),
+        ),
+        backgroundColor: Color(0XFF1b1e44),
+        toolbarOpacity: 0,
+      ),
+      backgroundColor: Colors.deepOrange[100],
       body: Center(
         child: PageView.builder(
           controller: _pageController,

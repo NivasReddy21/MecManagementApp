@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage>
     screenHeight = size.height;
     screenWidth = size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.indigo[200],
       body: Stack(
         children: <Widget>[
           menu(context),
@@ -210,9 +210,9 @@ class _HomePageState extends State<HomePage>
                                   Spacer(),
                                   IconButton(
                                     icon: Icon(
-                                      Icons.add_circle_outline,
+                                      Icons.add,
                                       color: Color(0x99FFFFFF),
-                                      size: 30,
+                                      size: 40,
                                     ),
                                     onPressed: handelAddPost,
                                   ),
@@ -224,7 +224,17 @@ class _HomePageState extends State<HomePage>
                                   const EdgeInsets.symmetric(horizontal: 32.0),
                               child: Text(
                                 "MEC Feed",
-                                style: whiteHeadingTextStyle,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white, letterSpacing: 1.0, fontSize: 50, fontWeight: FontWeight.bold,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.lightBlue,
+                                      blurRadius: 10.0,
+                                      offset: Offset(5.0, 5.0)
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             Padding(
