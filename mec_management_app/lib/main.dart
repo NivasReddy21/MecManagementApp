@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/clubs_page.dart';
-
-import 'package:mec_management_app/UI/home_page_1.dart';
 import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
-
+import 'package:mec_management_app/UI/upload_page.dart';
 import 'UI/CCD/frontpage.dart';
 import 'UI/aboutpage.dart';
 import 'UI/faculty_members/CIVILfaculty.dart';
@@ -17,6 +15,7 @@ import 'UI/faculty_members/Physicsfaculty.dart';
 import 'UI/faculty_members/chemistryfaculty.dart';
 import 'UI/faculty_members/faculty/branches.dart';
 import 'UI/holidays/holidays_listing_screen.dart';
+import 'UI/home_page_1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -28,12 +27,13 @@ class MyApp extends StatelessWidget {
       title: 'Mahindra Ecole Centrale',
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
+        brightness: Brightness.dark,
       ),
-      initialRoute: '/login',
+      initialRoute: '/uploadPage',
       routes: {
         '/login': (context) => LoginPage(),
-        '/about': (context) => aboutPage(),
         '/home': (context) => HomePage(),
+        '/about': (context) => aboutPage(),
         '/frontPage': (context) => frontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
         '/mech': (context) => MechFacultyPage(),
         '/phy': (context) => PhysicsFacultyPage(),
         '/loading': (context) => LoadingScreen(),
+        '/uploadPage': (context) => ImageCapture()
       },
     );
   }
