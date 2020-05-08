@@ -110,13 +110,11 @@ class _FrontPageState extends State<frontPage> {
             children: <Widget>[
               _buildMenuItem('PASTRY', Icons.cake, PASTRY()),
               _buildMenuItem('COFFEE', Icons.cloud, COFFEE()),
-              _buildMenuItem('CHOCOSHOT', Icons.restaurant, CHOCOSHOT()),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              _buildMenuItem('MAGGI', Icons.insert_chart, MAGGI()),
               _buildMenuItem('DONUTS', Icons.donut_small, DONUTS()),
             ],
           )

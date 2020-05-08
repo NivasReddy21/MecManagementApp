@@ -52,8 +52,10 @@ class _LoginPageState extends State<LoginPage>
   String signInEmail;
   String signInPassword;
 
+
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
 
   @override
   Widget build(BuildContext context) {
@@ -263,7 +265,7 @@ class _LoginPageState extends State<LoginPage>
                                 fontFamily: "WorkSansSemiBold", fontSize: 17.0),
                           ),
                           onChanged: (value) {
-                            setState(() {
+                              setState(() {
                               signInEmail = value.toString().trim();
                             });
                           },

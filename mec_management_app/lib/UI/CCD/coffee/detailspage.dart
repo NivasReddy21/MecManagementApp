@@ -228,7 +228,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: <Widget>[
                                 Container(
                                   width: 150.0,
-                                  child: Text('MOKA',
+                                  child: Text('COFFEE',
                                       style: TextStyle(
                                           fontFamily: 'varela',
                                           fontSize: 30.0,

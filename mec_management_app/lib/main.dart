@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/clubs_page.dart';
 import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
-import 'package:mec_management_app/UI/upload_page.dart';
+import 'package:mec_management_app/UI/teachandlearn/mainpage.dart';
+
 import 'UI/CCD/frontpage.dart';
 import 'UI/aboutpage.dart';
 import 'UI/faculty_members/CIVILfaculty.dart';
@@ -16,6 +17,7 @@ import 'UI/faculty_members/chemistryfaculty.dart';
 import 'UI/faculty_members/faculty/branches.dart';
 import 'UI/holidays/holidays_listing_screen.dart';
 import 'UI/home_page_1.dart';
+import 'UI/upload_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
-        '/about': (context) => aboutPage(),
+        '/mainpage': (context) => mainPage(),
         '/frontPage': (context) => frontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),

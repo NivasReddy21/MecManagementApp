@@ -18,23 +18,12 @@ class _PASTRYPageState extends State<PASTRY> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Welcome, Anurag',
+                Text('Welcome....!',
                     style: TextStyle(
                         fontFamily: 'varela',
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF473D3A))),
-                Padding(
-                    padding: EdgeInsets.only(right: 15.0),
-                    child: Container(
-                      height: 40.0,
-                      width: 40.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          image: DecorationImage(
-                              image: AssetImage('assets/img/model.jpg'),
-                              fit: BoxFit.cover)),
-                    ))
               ],
             ),
             SizedBox(height: 10.0),
@@ -42,7 +31,7 @@ class _PASTRYPageState extends State<PASTRY> {
               padding: const EdgeInsets.only(right: 45.0),
               child: Container(
                 child: Text(
-                  'Let\'s select the best taste for your next drinks break!',
+                  'Let\'s select the best Cake for you in this break!',
                   style: TextStyle(
                       fontFamily: 'nunito',
                       fontSize: 17.0,
@@ -69,11 +58,11 @@ class _PASTRYPageState extends State<PASTRY> {
                 height: 410.0,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
                   _coffeeListCard(
-                      'assets/img/orange.png',
-                      'Orange-Juice',
+                      'assets/img/cake.jpeg',
+                      'Choclate Cake',
                       'CCD',
-                      'Our freshly made orange juice',
-                      '30/-',
+                      'Cool Pastry',
+                      '50/-',
                       false),
                 ])),
             SizedBox(height: 15.0),
@@ -81,7 +70,7 @@ class _PASTRYPageState extends State<PASTRY> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Different Types Of Juices',
+                  'Different Types Of Pastry We Have',
                   style: TextStyle(
                       fontFamily: 'varela',
                       fontSize: 17.0,
@@ -93,9 +82,8 @@ class _PASTRYPageState extends State<PASTRY> {
             Container(
                 height: 125.0,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
-                  _buildImage('assets/img/coffee.jpg'),
-                  _buildImage('assets/img/coffee2.jpg'),
-                  _buildImage('assets/img/coffee3.jpg')
+                  _buildImage('assets/img/cake.jpg'),
+                  _buildImage('assets/img/cake1.jpg')
                 ])),
             SizedBox(height: 20.0)
           ],

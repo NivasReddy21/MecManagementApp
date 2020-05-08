@@ -4,7 +4,7 @@ import 'package:liquid_swipe/liquid_swipe.dart';
 
 class ClubsPage extends StatelessWidget {
   static const TextStyle goldcoinGreyStyle = TextStyle(
-      color: Colors.grey,
+      color: Colors.white,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
       fontFamily: "Product Sans");
@@ -16,7 +16,7 @@ class ClubsPage extends StatelessWidget {
       fontFamily: "Product Sans");
 
   static const TextStyle greyStyle =
-      TextStyle(fontSize: 40.0, color: Colors.grey, fontFamily: "Product Sans");
+      TextStyle(fontSize: 40.0, color: Colors.white, fontFamily: "Product Sans");
   static const TextStyle whiteStyle = TextStyle(
       fontSize: 40.0, color: Colors.white, fontFamily: "Product Sans");
 
@@ -27,7 +27,7 @@ class ClubsPage extends StatelessWidget {
   );
 
   static const TextStyle descriptionGreyStyle = TextStyle(
-    color: Colors.grey,
+    color: Colors.white,
     fontSize: 20.0,
     fontFamily: "Product Sans",
   );
@@ -41,7 +41,13 @@ class ClubsPage extends StatelessWidget {
 
   final pages = [
     Container(
-      color: Colors.white,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomLeft,
+          colors: [Colors.blue, Colors.red]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,6 +59,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "ENIGMA",
+                  textAlign: TextAlign.center,
                   style: goldcoinGreyStyle,
                 ),
               ],
@@ -90,7 +97,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Color(0xFF55006c),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.purple[800], Colors.purple[200]]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +156,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.red[300],
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.indigo[800], Colors.indigo[200]]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,7 +211,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.yellow,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.yellow[800], Colors.yellow[400]]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,7 +265,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.blue[100],
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end : Alignment.bottomRight,
+          colors: [Colors.teal[800], Colors.teal[300]]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -288,7 +319,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.green[200],
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.greenAccent[400], Colors.greenAccent]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -336,7 +373,13 @@ class ClubsPage extends StatelessWidget {
       ),
     ),
     Container(
-      color: Colors.pink[300],
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.pinkAccent[400], Colors.pink[300]]
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,

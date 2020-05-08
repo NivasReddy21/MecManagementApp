@@ -107,9 +107,9 @@ class _HomePageState extends State<HomePage>
                     route: '/clubs'),
                 SizedBox(height: 15),
                 menuButtons(
-                    name: 'Time Table',
+                    name: 'TeachAndLearn',
                     icon: Icons.calendar_view_day,
-                    route: '/timetable'),
+                    route: '/mainpage'),
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'Holidays',
@@ -316,20 +316,13 @@ class _HomePageState extends State<HomePage>
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
-                            postData[i]['title'],
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
                             postData[i]['title'],
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
+                                fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

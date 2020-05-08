@@ -61,16 +61,16 @@ class _DetailsPageState extends State<DetailsPage> {
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   buildIngredientItem(
-                                      'Water',
+                                      'Cream',
                                       Icon(Feather.getIconData('droplet'),
                                           size: 10.0, color: Colors.white),
                                       Color(0xFF6FC5DA)),
                                   buildIngredientItem(
-                                      'Brewed Espresso',
+                                      'Choclate',
                                       Icon(Feather.getIconData("target"), size: 18.0, color: Colors.white),
                                       Color(0xFF615955)),
                                   buildIngredientItem(
-                                      'Sugar',
+                                      'Nuts',
                                       Icon(Feather.getIconData("box"), size: 18.0, color: Colors.white),
                                       Color(0xFFF39595)),
                                   buildIngredientItem(
@@ -228,7 +228,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: <Widget>[
                                 Container(
                                   width: 150.0,
-                                  child: Text('MOKA',
+                                  child: Text('CAKE',
                                       style: TextStyle(
                                           fontFamily: 'varela',
                                           fontSize: 30.0,
@@ -254,7 +254,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             SizedBox(height: 10.0),
                             Container(
                               width: 170.0,
-                              child: Text('Freshly steamed milk with choclate-flavored syrup is marked with espresso and topped with caramel drizzle for an oh-so-sweet finish.',
+                              child: Text('Dense chocolate cake layered with a decadent dutch truffle sauce.',
                                   style: TextStyle(
                                       fontFamily: 'nunito',
                                       fontSize: 13.0,

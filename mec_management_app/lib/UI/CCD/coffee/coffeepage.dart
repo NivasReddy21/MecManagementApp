@@ -18,23 +18,12 @@ class _COFFEEPageState extends State<COFFEE> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text('Welcome, Anurag',
+            Text('Welcome, Back',
                 style: TextStyle(
                     fontFamily: 'varela',
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF473D3A))),
-            Padding(
-                padding: EdgeInsets.only(right: 15.0),
-                child: Container(
-                  height: 40.0,
-                  width: 40.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      image: DecorationImage(
-                          image: AssetImage('assets/img/model.jpg'),
-                          fit: BoxFit.cover)),
-                ))
           ],
         ),
         SizedBox(height: 10.0),
@@ -70,7 +59,7 @@ class _COFFEEPageState extends State<COFFEE> {
             child: ListView(scrollDirection: Axis.horizontal, children: [
               _coffeeListCard(
                   'assets/img/starbucks.png',
-                  'MOKA',
+                  'MOCHA',
                   'CCD',
                   'Our dark, rich espresso balanced with steamed milk and a light layer of foam',
                   '40/-',
@@ -79,7 +68,7 @@ class _COFFEEPageState extends State<COFFEE> {
                   'assets/img/starbucks.png',
                   'Spcl Coffee',
                   'CCD',
-                  'Our dark, rich espresso balanced with steamed milk and a light layer of foam',
+                  'The all-time favourite Cafe Frappe. Rich, creamy and irresistably cold coffee.',
                   '50/-',
                   false),
               _coffeeListCard(

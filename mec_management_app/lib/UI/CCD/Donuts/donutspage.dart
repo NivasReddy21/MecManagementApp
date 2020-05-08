@@ -18,23 +18,12 @@ class _DONUTSPageState extends State<DONUTS> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Welcome, Anurag',
+                Text('Welcome, Back',
                     style: TextStyle(
                         fontFamily: 'varela',
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF473D3A))),
-                Padding(
-                    padding: EdgeInsets.only(right: 15.0),
-                    child: Container(
-                      height: 40.0,
-                      width: 40.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          image: DecorationImage(
-                              image: AssetImage('assets/img/model.jpg'),
-                              fit: BoxFit.cover)),
-                    ))
               ],
             ),
             SizedBox(height: 10.0),
@@ -69,10 +58,10 @@ class _DONUTSPageState extends State<DONUTS> {
                 height: 410.0,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
                   _coffeeListCard(
-                      'assets/img/orange.png',
-                      'Orange-Juice',
+                      'assets/img/donuts.jpeg',
+                      'DONUTS',
                       'CCD',
-                      'Our freshly made orange juice',
+                      'Our freshly Choclate Dipped Donuts',
                       '30/-',
                       false),
                 ])),
@@ -81,7 +70,7 @@ class _DONUTSPageState extends State<DONUTS> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Different Types Of Juices',
+                  'Other Donuts that We Have',
                   style: TextStyle(
                       fontFamily: 'varela',
                       fontSize: 17.0,
@@ -93,9 +82,8 @@ class _DONUTSPageState extends State<DONUTS> {
             Container(
                 height: 125.0,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
-                  _buildImage('assets/img/coffee.jpg'),
-                  _buildImage('assets/img/coffee2.jpg'),
-                  _buildImage('assets/img/coffee3.jpg')
+                  _buildImage('assets/img/donuts1.jpg'),
+                  _buildImage('assets/img/Donuts2.jpg')
                 ])),
             SizedBox(height: 20.0)
           ],
