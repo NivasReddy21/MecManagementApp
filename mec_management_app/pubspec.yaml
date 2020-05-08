@@ -19,7 +19,6 @@ environment:
 dependencies:
   firebase_auth: 0.15.1+1
   cloud_firestore:
-  google_sign_in:
   rxdart: ^0.24.0
   firebase_storage:
   liquid_pull_to_refresh: ^1.2.0
@@ -33,6 +32,8 @@ dependencies:
 
   font_awesome_flutter: ^8.8.1
   liquid_swipe: ^1.4.3
+  google_sign_in: ^4.4.4
+
 
   flutter_spinkit: ^4.1.2+1
   intl: ^0.16.1
@@ -40,6 +41,7 @@ dependencies:
   after_layout: ^1.0.7+2
   flutter_icons: ^0.2.0
   email_validator: ^1.0.4
+
 
 dev_dependencies:
   flutter_test:
