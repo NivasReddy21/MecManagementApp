@@ -1,0 +1,233 @@
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
+
+// class UploadPage extends StatefulWidget {
+//   @override
+//   _UploadPageState createState() => _UploadPageState();
+// }
+
+// class _UploadPageState extends State<UploadPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Color(0xFF1b1e44),
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: Text(
+//           'Upload A Post',
+//           style: TextStyle(
+//             fontSize: 30,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         backgroundColor: Colors.black,
+//       ),
+//       body: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: <Widget>[
+//           FlatButton(
+//             onPressed: () {},
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: <Widget>[
+//                 Icon(
+//                   Icons.photo_size_select_actual,
+//                   color: Colors.white,
+//                 ),
+//                 SizedBox(
+//                   width: 10,
+//                 ),
+//                 Text('Upload Photo',
+//                     style: TextStyle(
+//                         fontSize: 20,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.white))
+//               ],
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+class ImageCapture extends StatefulWidget {
+  @override
+  _ImageCaptureState createState() => _ImageCaptureState();
+}
+
+class _ImageCaptureState extends State<ImageCapture> {
+  File _imageFile;
+  String _title;
+  String _description;
+
+  Future<void> _pickImage(ImageSource source) async {
+    File selected = await ImagePicker.pickImage(source: source);
+
+    setState(() {
+      _imageFile = selected;
+    });
+  }
+
+  void _clear() {
+    setState(() {
+      _imageFile = null;
+    });
+  }
+
+  Future<void> _cropImage() async {
+    File _cropped = await ImageCropper.cropImage(
+      sourcePath: _imageFile.path,
+    );
+    setState(() {
+      _imageFile = _cropped ?? _imageFile;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Upload Post',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            )),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[900],
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.photo_camera),
+                onPressed: () => _pickImage(ImageSource.camera),
+              ),
+            ),
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.photo_album),
+                onPressed: () => _pickImage(ImageSource.gallery),
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: ListView(
+        children: <Widget>[
+          if (_imageFile != null) ...{
+            Image.file(_imageFile),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: FlatButton(
+                    child: Icon(Icons.crop),
+                    onPressed: _cropImage,
+                  ),
+                ),
+                Expanded(
+                  child: FlatButton(
+                    child: Icon(Icons.refresh),
+                    onPressed: _clear,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  _title = value;
+                });
+              },
+              decoration: InputDecoration(hintText: 'Title'),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  _description = value;
+                });
+              },
+              decoration: InputDecoration(hintText: 'Description'),
+            ),
+            SizedBox(height: 20),
+            Uploader(
+              file: _imageFile,
+              title: _title,
+              description: _description,
+            )
+          }
+        ],
+      ),
+    );
+  }
+}
+
+class Uploader extends StatefulWidget {
+  final File file;
+  final String title;
+  final String description;
+
+  Uploader({Key key, this.file, this.description, this.title})
+      : super(key: key);
+
+  @override
+  _UploaderState createState() => _UploaderState();
+}
+
+class _UploaderState extends State<Uploader> {
+  final FirebaseStorage _storage =
+      FirebaseStorage(storageBucket: 'gs://mecmanagementapp.appspot.com/');
+
+  StorageUploadTask _uploadTask;
+
+  void _startUpload() {
+    var _firebaseRef = FirebaseDatabase().reference().child('');
+    String filePath = 'images/${DateTime.now()}.png';
+    setState(() {
+      _uploadTask = _storage.ref().child(filePath).putFile(widget.file);
+    });
+
+    _firebaseRef.push().set({
+      "title": widget.title,
+      "description": widget.description,
+      "time": DateTime.now().microsecondsSinceEpoch * -1,
+      "imageUrl": filePath
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_uploadTask != null) {
+      return StreamBuilder<StorageTaskEvent>(
+        stream: _uploadTask.events,
+        builder: (context, snapshot) {
+          var event = snapshot?.data?.snapshot;
+
+          return Column(
+            children: <Widget>[
+              if (_uploadTask.isComplete) Text('Upload COmplete')
+            ],
+          );
+        },
+      );
+    } else {
+      return FlatButton.icon(
+        onPressed: _startUpload,
+        icon: Icon(Icons.cloud_upload),
+        label: Text('Upload'),
+      );
+    }
+  }
+}

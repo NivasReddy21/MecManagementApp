@@ -26,16 +26,19 @@ class _HomePageState extends State<HomePage>
   Animation<double> _scaleAnimation;
   Animation<Offset> _slideAnimation;
   Animation<double> _menuScaleAnimation;
-  String userName;
   String displayUrl;
+  Widget userName;
 
-  static int refreshNum = 10; // number that changes when refreshed
-  Stream<int> counterStream =
-      Stream<int>.periodic(Duration(seconds: 3), (x) => refreshNum);
+  void getUserNameWidget() async {
+    var userNameWidget = await UserDetails().userNameWidget();
+    setState(() {
+      userName = userNameWidget;
+    });
+  }
 
   @override
   void initState() {
-    UserDetails().getUser();
+    getUserNameWidget();
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
@@ -85,19 +88,13 @@ class _HomePageState extends State<HomePage>
                 Row(
                   children: <Widget>[
                     CircleAvatar(
-                      backgroundImage: AssetImage('assets/img/image2.png'),
+                      backgroundImage: AssetImage('assets/img/fall.jpg'),
                       radius: 23,
                     ),
                     SizedBox(
                       width: 7,
                     ),
-                    Text(
-                      'Jon Snow',
-                      style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey[900]),
-                    )
+                    userName,
                   ],
                 ),
                 SizedBox(height: 70),
@@ -211,10 +208,13 @@ class _HomePageState extends State<HomePage>
                                     style: fadedTextStyle,
                                   ),
                                   Spacer(),
-                                  Icon(
-                                    Icons.person_outline,
-                                    color: Color(0x99FFFFFF),
-                                    size: 30,
+                                  IconButton(
+                                    icon: Icon(
+                                      Icons.add_circle_outline,
+                                      color: Color(0x99FFFFFF),
+                                      size: 30,
+                                    ),
+                                    onPressed: handelAddPost,
                                   ),
                                 ],
                               ),
@@ -300,8 +300,8 @@ class _HomePageState extends State<HomePage>
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
                 ),
-                child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVeQYN3ugmK2GH-MKXtQUf9m-537SIOCUobDG7xJeiutHTsyRN&usqp=CAU',
+                child: Image.asset(
+                  'assets/img/fall.jpg',
                   height: 150,
                   fit: BoxFit.fitWidth,
                 ),
@@ -340,5 +340,9 @@ class _HomePageState extends State<HomePage>
 
   Future<void> handleRefresh() async {
     Navigator.popAndPushNamed(context, '/loading');
+  }
+
+  handelAddPost() {
+    Navigator.of(context).pushNamed('/uploadPage');
   }
 }
