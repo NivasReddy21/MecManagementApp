@@ -52,10 +52,6 @@ class _LoginPageState extends State<LoginPage>
   String signInPassword;
 
 
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -262,7 +258,7 @@ class _LoginPageState extends State<LoginPage>
                                 fontFamily: "WorkSansSemiBold", fontSize: 17.0),
                           ),
                           onChanged: (value) {
-                              setState(() {
+                            setState(() {
                               signInEmail = value.toString().trim();
                             });
                           },
@@ -356,7 +352,7 @@ class _LoginPageState extends State<LoginPage>
                     onPressed: () {
                       FirebaseAuth.instance
                           .signInWithEmailAndPassword(
-                              email: signInEmail, password: signInPassword)
+                          email: signInEmail, password: signInPassword)
                           .then((signedUser) {
                         Navigator.of(context).pop();
                         Navigator.of(context).pushReplacementNamed('/loading');
@@ -427,28 +423,6 @@ class _LoginPageState extends State<LoginPage>
                 ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: GestureDetector(
-                  onTap: () => _handleSignIn(),
-                  child: Container(
-                    padding: const EdgeInsets.all(15.0),
-                    decoration: new BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                    child: new Icon(
-                      FontAwesomeIcons.google,
-                      color: Color(0xFF0084ff),
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),
@@ -731,18 +705,36 @@ class _LoginPageState extends State<LoginPage>
     });
   }
 
-  Future<FirebaseUser> _handleSignIn() async {
-    GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+
+  Future<String> signInWithGoogle() async {
+    final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+    final GoogleSignInAuthentication googleSignInAuthentication =
+    await googleSignInAccount.authentication;
+
     final AuthCredential credential = GoogleAuthProvider.getCredential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+      accessToken: googleSignInAuthentication.accessToken,
+      idToken: googleSignInAuthentication.idToken,
     );
-    final FirebaseUser user =
-        (await _auth.signInWithCredential(credential)) as FirebaseUser;
-    print("signed in " + user.displayName);
-    UserManagement().storeNewUser(user, context);
-    return user;
+
+    final AuthResult authResult = await _auth.signInWithCredential(credential);
+    final FirebaseUser user = authResult.user;
+
+    assert(!user.isAnonymous);
+    assert(await user.getIdToken() != null);
+
+    final FirebaseUser currentUser = await _auth.currentUser();
+    assert(user.uid == currentUser.uid);
+
+    return 'signInWithGoogle succeeded: $user';
+  }
+
+  void signOutGoogle() async{
+    await googleSignIn.signOut();
+
+    print("User Sign Out");
   }
 
   Future<FirebaseUser> _handleEmailSignIn() async {
