@@ -6,7 +6,7 @@ admin.initializeApp({
 });
 var db = admin.database();
 
-function post(title, description) {
+function post(title, description, url) {
     var d = new Date();
     var n = d.getTime();
     var ref = db.ref("posts/");
@@ -14,6 +14,7 @@ function post(title, description) {
         title: title,
         time: n * -1,
         description: description,
+        url: url,
     });
 
     console.log(`title posted ${title} , ${description}`);

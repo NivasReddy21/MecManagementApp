@@ -5,7 +5,8 @@ const post = require('./posts')
 router.route('/').post((req, res) => {
     var title = req.body.title
     var description = req.body.description
-    post(title, description)
+    var url = req.body.url
+    post(title, description, url)
     res.send(`Title Posted ${title}`)
 })
 

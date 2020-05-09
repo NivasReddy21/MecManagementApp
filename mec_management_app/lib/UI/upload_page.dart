@@ -8,7 +8,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mec_management_app/UI/intro/data.dart';
+import 'package:mec_management_app/services/posts_management.dart';
 
 // class UploadPage extends StatefulWidget {
 //   @override
@@ -103,14 +103,12 @@ class _ImageCaptureState extends State<ImageCapture> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.indigo[800], Colors.indigo[200]]
-            ),
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.indigo[800], Colors.indigo[200]]),
           ),
         ),
       ),
-
       backgroundColor: Colors.red[300],
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -200,18 +198,28 @@ class _UploaderState extends State<Uploader> {
   StorageUploadTask _uploadTask;
 
   void _startUpload() {
-    var _firebaseRef = FirebaseDatabase().reference().child('');
+    var _firebaseRef = FirebaseDatabase().reference().child('posts');
     String filePath = 'images/${DateTime.now()}.png';
+    String url;
     setState(() {
       _uploadTask = _storage.ref().child(filePath).putFile(widget.file);
     });
 
-    _firebaseRef.push().set({
-      "title": widget.title,
-      "description": widget.description,
-      "time": DateTime.now().microsecondsSinceEpoch * -1,
-      "imageUrl": filePath
-    });
+    post();
+
+    // _firebaseRef.push().set({
+    //   "title": widget.title,
+    //   "description": widget.description,
+    //   "time": DateTime.now().microsecondsSinceEpoch * -1,
+    //   "imageUrl": url
+    // });
+  }
+
+  void post() async {
+    String url;
+    var dowurl = await (await _uploadTask.onComplete).ref.getDownloadURL();
+    url = dowurl.toString();
+    PostManagement().makePostReq(widget.title, widget.description, url);
   }
 
   @override
@@ -220,7 +228,7 @@ class _UploaderState extends State<Uploader> {
       return StreamBuilder<StorageTaskEvent>(
         stream: _uploadTask.events,
         builder: (context, snapshot) {
-          var event = snapshot?.data?.snapshot;
+          // var event = snapshot?.data?.snapshot;
 
           return Column(
             children: <Widget>[

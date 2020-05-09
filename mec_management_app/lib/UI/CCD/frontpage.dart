@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/CCD/Tea/teapage.dart';
-import 'package:mec_management_app/UI/CCD/chocoshot/chocoshot.dart';
 import 'package:mec_management_app/UI/CCD/coffee/coffeepage.dart';
-import 'package:mec_management_app/UI/CCD/maggi/maggipage.dart';
-
 import 'Donuts/donutspage.dart';
 import 'Juice/juicepage.dart';
 import 'PUFF/puffpage.dart';

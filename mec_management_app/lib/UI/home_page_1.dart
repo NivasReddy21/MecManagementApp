@@ -226,13 +226,15 @@ class _HomePageState extends State<HomePage>
                                 "MEC Feed",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Colors.white, letterSpacing: 1.0, fontSize: 50, fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  letterSpacing: 1.0,
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.bold,
                                   shadows: [
                                     Shadow(
-                                      color: Colors.lightBlue,
-                                      blurRadius: 10.0,
-                                      offset: Offset(5.0, 5.0)
-                                    ),
+                                        color: Colors.lightBlue,
+                                        blurRadius: 10.0,
+                                        offset: Offset(5.0, 5.0)),
                                   ],
                                 ),
                               ),
@@ -301,7 +303,7 @@ class _HomePageState extends State<HomePage>
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(24))),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15,15,15,30),
+          padding: const EdgeInsets.fromLTRB(15, 15, 15, 30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -310,8 +312,8 @@ class _HomePageState extends State<HomePage>
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
-                child: Image.asset(
-                  'assets/img/fall.jpg',
+                child: Image.network(
+                  postData[i]['url'],
                   height: 150,
                   fit: BoxFit.fitWidth,
                 ),

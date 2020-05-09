@@ -17,7 +17,6 @@ router
                 list.push(elem.val());
             })
 
-
             res.json(list);
 
         }, function(errorObject) {
