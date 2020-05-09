@@ -60,7 +60,7 @@ class ClubsPage extends StatelessWidget {
                 Text(
                   "\n"
                   "\n"
-                  "ENIGMA",
+                  "         ENIGMA",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,fontSize: 40,color: Colors.white,letterSpacing: 1.0,
                   ),
@@ -80,7 +80,7 @@ class ClubsPage extends StatelessWidget {
                   style: greyStyle,
                 ),
                 Text(
-                  "      Rochan Avlur",
+                  "Rochan Avlur",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -92,7 +92,7 @@ class ClubsPage extends StatelessWidget {
                   "E-mail: rochan170543@mechyd.ac\n"
                   "\n"
                   "\n"
-                  "	Enigma pledges to provide students with an environment and a community that offers resources to explore computer science,\n                   software and technology.\n""The club also helps with networking &\ncareer opportunities to its members.\n",
+                  "	Enigma pledges to provide students with an environment and a community that offers resources to explore computer science,\n      software and technology.\n""The club also helps with networking &\ncareer opportunities to its members.\n",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -193,11 +193,11 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "CAPTAIN :",
+                  "Captain :",
                   style: greyStyle,
                 ),
                 Text(
-                  "      Kartik Sunil",
+                  "Kartik Sunil",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -288,7 +288,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Erudite",
+                  "            Erudite",
                   style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: 40, color: Colors.white,
                   ),
@@ -344,7 +344,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "SecretGarden",
+                  "      SecretGarden",
                   style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: 40, color:Colors.white,
                   ),
@@ -360,11 +360,11 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
-                  "    Vamsi Varma",
+                  "Vamsi Varma",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -374,64 +374,6 @@ class ClubsPage extends StatelessWidget {
                   "\nE-mail:  vamsivarma170558@mechyd.ac.in"
                   "\n"
                   "\nThis club aims to pique the interest of students in cybersecurity. We tread on topics related to network, web, system security and security practices to help one grow as a cyber-aware individual.\n                 We do this by looking into code breaking and evaluating defenses to develop the intuition necessary to tackle security challenges.",
-                  style: descriptionGreyStyle,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.pinkAccent[400], Colors.pink[300]]
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "\n"
-                  "\n"
-                  "Orion",
-                  style: TextStyle(
-                    fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Image.asset(""),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              //mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "HEAD :",
-                  style: greyStyle,
-                ),
-                Text(
-                  "   Rohan Pandey",
-                  style: boldStyle,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Email: rohan170236@mechyd.ac"
-                      "\n"
-                      "\nOrion provides a platform for students to explore and learn everything about aerospace and astronomy.\n                Workshops and quizzes are organized to teach students about planes while meet-ups are organized to track astronomical events to get students interested in outer space.",
                   style: descriptionGreyStyle,
                 ),
               ],
@@ -458,7 +400,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Orion",
+                  "             Orion",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -474,11 +416,11 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD :",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
-                  "   Rohan Pandey",
+                  "Rohan Pandey",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -515,7 +457,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                  "Art Felt Club",
+                  "      Art Felt Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -531,11 +473,11 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD :",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
-                  "   Tushara Chada",
+                  "Tushara Chada",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -572,8 +514,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                  "\n"
-                      "Dance Club",
+                      "        Dance Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -589,11 +530,11 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD :",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
-                  "  Sai Sree Pokala",
+                  "Sai Sree Pokala",
                   style: boldStyle,
                 ),
                 SizedBox(
@@ -630,8 +571,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                      "\n"
-                      "Media Club",
+                      "        Media Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -647,12 +587,12 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD :",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
                   "  Abhinav Kolla"
-                  "\n  Vedant Sangani",
+                  "\nVedant Sangani",
                   style: TextStyle(
                     fontWeight: FontWeight.bold, color: Colors.black, fontSize: 42,
                   ),
@@ -661,8 +601,8 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Mail ID			: 	abhinav170113@mechyd.ac.in"
-                  "\nMail ID			: 	vedant170359@mechyd.ac.in"
+                  "Mail ID : abhinav170113@mechyd.ac.in"
+                  "\nMail ID : vedant170359@mechyd.ac.in"
                       "\n"
                       "\nThe aim of The Media Club is to centralise any media related activities for all events happening in MEC. The club focuses on photo/video coverage and trailers for the same.",
                   style: descriptionGreyStyle,
@@ -693,7 +633,7 @@ class ClubsPage extends StatelessWidget {
                 Text(
                   "\n"
                       "\n"
-                      "Zenith Science Club",
+                      "    Science Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -709,7 +649,7 @@ class ClubsPage extends StatelessWidget {
               //mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "HEAD :",
+                  "Head :",
                   style: greyStyle,
                 ),
                 Text(
@@ -724,7 +664,7 @@ class ClubsPage extends StatelessWidget {
                 ),
                 Text(
                       "\n"
-                      "\n We aim to communicate, to students, teachers and the general public, the wonder and excitement of science and further, to motivate young people towards a deeper engagement with science.\n             As part of the science club, we organize an extensive program reaching out to all levels and ages of science learning.\n      By setting out the power and potential of science to young people, we aim to spark a passion for discovery and inspire a lifelong interest in science.",
+                      "\n We aim to communicate, to students, teachers and the general public, the wonder and excitement of science and further, to motivate young people towards a deeper engagement with science.\n      By setting out the power and potential of science to young people, we aim to spark a passion for discovery and inspire a lifelong interest in science.",
                   style: descriptionGreyStyle,
                 ),
               ],

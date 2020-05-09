@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/intro/data.dart';
 import 'dart:math';
@@ -54,10 +55,10 @@ class _aboutPage extends State<aboutPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("About Page",
+                    Text("         About Page",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 26.0,
+                          fontSize: 36.0,
                           fontFamily: "Calibre-Semibold",
                           letterSpacing: 1.0,
                         )),
@@ -77,8 +78,8 @@ class _aboutPage extends State<aboutPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
-                          child: Text("",
-                              style: TextStyle(color: Colors.white)),
+                          child: Text("Developers",
+                              style: TextStyle(color: Colors.white, fontSize: 20)),
                         ),
                       ),
                     ),
@@ -108,7 +109,7 @@ class _aboutPage extends State<aboutPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Developers",
+                    Text("",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 46.0,
@@ -127,14 +128,6 @@ class _aboutPage extends State<aboutPage> {
                         color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 22.0, vertical: 6.0),
-                          child: Text("",
-                              style: TextStyle(color: Colors.white)),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       width: 15.0,
@@ -151,7 +144,7 @@ class _aboutPage extends State<aboutPage> {
                     padding: EdgeInsets.only(left: 18.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset("assets/img/developers.png",
+                      child: Image.asset("",
                           width: 200.0, height: 200.0),
                     ),
                   )

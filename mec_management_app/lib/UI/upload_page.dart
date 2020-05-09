@@ -68,8 +68,8 @@ class ImageCapture extends StatefulWidget {
 
 class _ImageCaptureState extends State<ImageCapture> {
   File _imageFile;
-  String _title;
-  String _description;
+  String _title = "";
+  String _description = "";
 
   Future<void> _pickImage(ImageSource source) async {
     File selected = await ImagePicker.pickImage(source: source);
@@ -220,6 +220,8 @@ class _UploaderState extends State<Uploader> {
     var dowurl = await (await _uploadTask.onComplete).ref.getDownloadURL();
     url = dowurl.toString();
     PostManagement().makePostReq(widget.title, widget.description, url);
+    // ignore: unnecessary_statements
+    Navigator.of(context).pop;
   }
 
   @override
@@ -232,7 +234,7 @@ class _UploaderState extends State<Uploader> {
 
           return Column(
             children: <Widget>[
-              if (_uploadTask.isComplete) Text('Upload COmplete')
+              if (_uploadTask.isComplete) Text('Upload Complete')
             ],
           );
         },

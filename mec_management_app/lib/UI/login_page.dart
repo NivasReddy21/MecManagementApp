@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage>
   TextEditingController signupNameController = new TextEditingController();
   TextEditingController signupPasswordController = new TextEditingController();
   TextEditingController signupConfirmPasswordController =
-      new TextEditingController();
+  new TextEditingController();
 
   PageController _pageController;
 
@@ -50,6 +50,10 @@ class _LoginPageState extends State<LoginPage>
 
   String signInEmail;
   String signInPassword;
+
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
 
   @override
@@ -424,6 +428,28 @@ class _LoginPageState extends State<LoginPage>
               ],
             ),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 10.0),
+                child: GestureDetector(
+                  onTap: () => _handleSignIn(),
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: new Icon(
+                      FontAwesomeIcons.google,
+                      color: Color(0xFF0084ff),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -592,11 +618,11 @@ class _LoginPageState extends State<LoginPage>
                               });
                               confirmPassword == signUpPassword
                                   ? setState(() {
-                                      ifConfirmPass = true;
-                                    })
+                                ifConfirmPass = true;
+                              })
                                   : setState(() {
-                                      ifConfirmPass = true;
-                                    });
+                                ifConfirmPass = true;
+                              });
                             }),
                       ),
                     ],
@@ -643,32 +669,32 @@ class _LoginPageState extends State<LoginPage>
                       ),
                     ),
                     onPressed: () => {
-                          ifConfirmPass
-                              ? FirebaseAuth.instance
-                                  .createUserWithEmailAndPassword(
-                                      email: signUpEmail,
-                                      password: signUpPassword)
-                                  .then((signedInUser) {
-                                  var userUpdateInfo = new UserUpdateInfo();
-                                  userUpdateInfo.displayName = userName;
-                                  userUpdateInfo.photoUrl =
-                                      'assets/img/fall.jpg';
-                                  FirebaseAuth.instance
-                                      .currentUser()
-                                      .then((user) {
-                                    user
-                                        .updateProfile(userUpdateInfo)
-                                        .then((value) {
-                                      _handleEmailSignIn();
-                                    });
-                                  }).catchError((e) {
-                                    print(e);
-                                  });
-                                }).catchError((e) {
-                                  print(e);
-                                })
-                              : showInSnackBar('Check Your Password')
-                        }),
+                      ifConfirmPass
+                          ? FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                          email: signUpEmail,
+                          password: signUpPassword)
+                          .then((signedInUser) {
+                        var userUpdateInfo = new UserUpdateInfo();
+                        userUpdateInfo.displayName = userName;
+                        userUpdateInfo.photoUrl =
+                        'assets/img/fall.jpg';
+                        FirebaseAuth.instance
+                            .currentUser()
+                            .then((user) {
+                          user
+                              .updateProfile(userUpdateInfo)
+                              .then((value) {
+                            _handleEmailSignIn();
+                          });
+                        }).catchError((e) {
+                          print(e);
+                        });
+                      }).catchError((e) {
+                        print(e);
+                      })
+                          : showInSnackBar('Check Your Password')
+                    }),
               ),
             ],
           ),
@@ -705,36 +731,18 @@ class _LoginPageState extends State<LoginPage>
     });
   }
 
-
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn googleSignIn = GoogleSignIn();
-
-  Future<String> signInWithGoogle() async {
-    final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-    final GoogleSignInAuthentication googleSignInAuthentication =
-    await googleSignInAccount.authentication;
-
+  Future<FirebaseUser> _handleSignIn() async {
+    GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+    GoogleSignInAuthentication googleAuth = await googleUser.authentication;
     final AuthCredential credential = GoogleAuthProvider.getCredential(
-      accessToken: googleSignInAuthentication.accessToken,
-      idToken: googleSignInAuthentication.idToken,
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
     );
-
-    final AuthResult authResult = await _auth.signInWithCredential(credential);
-    final FirebaseUser user = authResult.user;
-
-    assert(!user.isAnonymous);
-    assert(await user.getIdToken() != null);
-
-    final FirebaseUser currentUser = await _auth.currentUser();
-    assert(user.uid == currentUser.uid);
-
-    return 'signInWithGoogle succeeded: $user';
-  }
-
-  void signOutGoogle() async{
-    await googleSignIn.signOut();
-
-    print("User Sign Out");
+    final FirebaseUser user =
+    (await _auth.signInWithCredential(credential)) as FirebaseUser;
+    print("signed in " + user.displayName);
+    UserManagement().storeNewUser(user, context);
+    return user;
   }
 
   Future<FirebaseUser> _handleEmailSignIn() async {

@@ -6,7 +6,7 @@ class PostManagement {
 
   Future<void> getPostData() async {
     try {
-      var mainUrl = 'http://10.0.2.2:4444/showposts';
+      var mainUrl = 'https://immense-hamlet-16097.herokuapp.com/showposts';
       // Await the http get response, then decode the json-formatted response.
 
       var response =
@@ -21,7 +21,7 @@ class PostManagement {
 
   Future<void> makePostReq(title, description, url) async {
     try {
-      var mainUrl = 'http://10.0.2.2:4444/posts';
+      var mainUrl = 'https://immense-hamlet-16097.herokuapp.com/posts';
       // Await the http get response, then decode the json-formatted response.
 
       var response = await http.post(mainUrl,
