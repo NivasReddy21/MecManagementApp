@@ -60,7 +60,7 @@ class ClubsPage extends StatelessWidget {
                 Text(
                   "\n"
                   "\n"
-                  "         ENIGMA",
+                  "ENIGMA",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,fontSize: 40,color: Colors.white,letterSpacing: 1.0,
                   ),
@@ -89,7 +89,7 @@ class ClubsPage extends StatelessWidget {
                 Text(
                   "The Computer Science Club\n"
                   "\n"
-                  "E-mail: rochan170543@mechyd.ac\n"
+                  "Mail Id : rochan170543@mechyd.ac\n"
                   "\n"
                   "\n"
                   "	Enigma pledges to provide students with an environment and a community that offers resources to explore computer science,\n      software and technology.\n""The club also helps with networking &\ncareer opportunities to its members.\n",
@@ -146,10 +146,10 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Mail ID:   rohan170340@mechyd.ac.in"
+                  "Mail ID : rohan170340@mechyd.ac.in"
                   "\n"
                   "\nCorporate Head : Husein Noble"
-                  "\nMail ID:    Husein170318@mechyd.ac.in"
+                  "\nMail ID : Husein170318@mechyd.ac.in"
                   "\n\nThe SAE-Aero Division aims to\nparticipate in various aeronautical competitions around India.\n             The team handles an in-depth analysis of how a plane is supposed to be made and the engineering sciences that go behind every aspect of the UAV.",
                   style: descriptionGreyStyle,
                 ),
@@ -259,7 +259,7 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Email:  khaliq170568@mechyd.ac.in"
+                  "Maid Id : khaliq170568@mechyd.ac.in"
                   "\n"
                   "\nThe Entrepreneurship and Innovation Cell strives to nurture the spirit of entrepreneurship by bringing innovative ideas to the forefront of discussions.\n             Events, workshops, industrial visits and seminars are hosted to provide an environment for students where they can develop their entrepreneurial skills.",
                   style: descriptionGreyStyle,
@@ -288,7 +288,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "            Erudite",
+                  "Erudite",
                   style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: 40, color: Colors.white,
                   ),
@@ -315,7 +315,7 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Email:  zaheer170537@mechyd.ac"
+                  "Mail Id : zaheer170537@mechyd.ac"
                   "\n"
                   "\nThe goal of The Erudite is to make sure anyone who is interested in literature and/or any form of public speaking has a fun and organised platform to showcase and improve their skills.",
                   style: descriptionGreyStyle,
@@ -344,7 +344,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "      SecretGarden",
+                  "SecretGarden",
                   style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: 40, color:Colors.white,
                   ),
@@ -371,7 +371,7 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "\nE-mail:  vamsivarma170558@mechyd.ac.in"
+                  "\nMail Id : vamsivarma170558@mechyd.ac.in"
                   "\n"
                   "\nThis club aims to pique the interest of students in cybersecurity. We tread on topics related to network, web, system security and security practices to help one grow as a cyber-aware individual.\n                 We do this by looking into code breaking and evaluating defenses to develop the intuition necessary to tackle security challenges.",
                   style: descriptionGreyStyle,
@@ -400,7 +400,7 @@ class ClubsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "             Orion",
+                  " Orion",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -427,7 +427,7 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Email: rohan170236@mechyd.ac"
+                  "Mail Id : rohan170236@mechyd.ac"
                   "\n"
                   "\nOrion provides a platform for students to explore and learn everything about aerospace and astronomy.\n                Workshops and quizzes are organized to teach students about planes while meet-ups are organized to track astronomical events to get students interested in outer space.",
                   style: descriptionGreyStyle,
@@ -457,7 +457,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                  "      Art Felt Club",
+                  "Art Felt Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -514,7 +514,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                      "        Dance Club",
+                      "Dance Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -541,7 +541,7 @@ class ClubsPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Mail ID: saisree170569@mechyd.ac.in"
+                  "Mail ID : saisree170569@mechyd.ac.in"
                       "\n"
                       "\nMEC’s Dance Club intends to encourage students who love to dance while overcoming their fears. It is open to everyone who enjoys dancing regardless of their prior experience.\n      Students will also be encouraged to take part and represent MEC in events/competitions outside.",
                   style: descriptionGreyStyle,
@@ -571,7 +571,7 @@ class ClubsPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "\n"
-                      "        Media Club",
+                      "Media Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
@@ -633,7 +633,7 @@ class ClubsPage extends StatelessWidget {
                 Text(
                   "\n"
                       "\n"
-                      "    Science Club",
+                      "Science Club",
                   style: TextStyle(
                     fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,
                   ),
