@@ -1,6 +1,9 @@
-import 'package:mec_management_app/UI/home_page_1.dart';
+import 'package:mec_management_app/UI/loadingpage.dart';
+import 'package:mec_management_app/UI/login_page.dart';
+import 'package:mec_management_app/UI/startupLoading.dart';
 import 'package:mec_management_app/Utilities/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:mec_management_app/services/userDetails.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SplashPage extends StatefulWidget {
@@ -20,6 +23,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   Animation<double> _positionAnimation;
 
   bool hideIcon = false;
+
+  Widget child = StartLoadingScreen();
 
   @override
   void initState() {
@@ -64,14 +69,14 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _scale2Controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
 
-    _scale2Animation = Tween<double>(begin: 1.0, end: 32.0).animate(
-        _scale2Controller)
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          Navigator.push(context,
-              PageTransition(type: PageTransitionType.fade, child: HomePage()));
-        }
-      });
+    _scale2Animation =
+        Tween<double>(begin: 1.0, end: 32.0).animate(_scale2Controller)
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              Navigator.push(context,
+                  PageTransition(type: PageTransitionType.fade, child: child));
+            }
+          });
   }
 
   @override

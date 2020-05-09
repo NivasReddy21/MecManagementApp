@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mec_management_app/UI/clubs_page.dart';
 import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
+import 'package:mec_management_app/UI/splashscreen.dart';
 import 'package:mec_management_app/UI/teachandlearn/mainpage.dart';
 
 import 'UI/CCD/frontpage.dart';
@@ -29,8 +30,9 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
       ),
-      initialRoute: '/login',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => SplashPage(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/mainpage': (context) => mainPage(),
