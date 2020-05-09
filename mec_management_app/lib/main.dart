@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFFFF4700),
         brightness: Brightness.dark,
       ),
-      initialRoute: '/uploadPage',
+      initialRoute: '/login',
       routes: {
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),

@@ -324,6 +324,14 @@ class _HomePageState extends State<HomePage>
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold),
                           ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            postData[i]['description'],
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
