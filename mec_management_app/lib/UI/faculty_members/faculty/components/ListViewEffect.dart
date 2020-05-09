@@ -23,6 +23,7 @@ class _ListViewEffect extends State<ListViewEffect> {
     _listBloc.startAnimation(widget.children.length, widget.duration);
 
     return new Scaffold(
+      backgroundColor: Color(0xFF1b1e44),
         body: new Container(
             child: new Container(
                 height: MediaQuery.of(context).size.height,

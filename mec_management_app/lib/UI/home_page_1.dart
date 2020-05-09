@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage>
     screenHeight = size.height;
     screenWidth = size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.indigo[200],
       body: Stack(
         children: <Widget>[
           menu(context),
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage>
                 SizedBox(height: 15),
                 menuButtons(
                     name: 'TeachAndLearn',
-                    icon: Icons.calendar_view_day,
+                    icon: Icons.assignment,
                     route: '/mainpage'),
                 SizedBox(height: 15),
                 menuButtons(
@@ -210,9 +210,9 @@ class _HomePageState extends State<HomePage>
                                   Spacer(),
                                   IconButton(
                                     icon: Icon(
-                                      Icons.add_circle_outline,
+                                      Icons.add,
                                       color: Color(0x99FFFFFF),
-                                      size: 30,
+                                      size: 40,
                                     ),
                                     onPressed: handelAddPost,
                                   ),
@@ -224,7 +224,17 @@ class _HomePageState extends State<HomePage>
                                   const EdgeInsets.symmetric(horizontal: 32.0),
                               child: Text(
                                 "MEC Feed",
-                                style: whiteHeadingTextStyle,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white, letterSpacing: 1.0, fontSize: 50, fontWeight: FontWeight.bold,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.lightBlue,
+                                      blurRadius: 10.0,
+                                      offset: Offset(5.0, 5.0)
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             Padding(
@@ -286,19 +296,19 @@ class _HomePageState extends State<HomePage>
     for (int i = 0; i < postData.length; i++) {
       cards.add(Card(
         margin: const EdgeInsets.symmetric(vertical: 20),
-        elevation: 4,
+        elevation: 10,
         color: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(24))),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(15,15,15,30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+                  Radius.circular(20),
                 ),
                 child: Image.asset(
                   'assets/img/fall.jpg',

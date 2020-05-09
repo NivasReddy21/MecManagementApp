@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,6 +8,7 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mec_management_app/UI/intro/data.dart';
 
 // class UploadPage extends StatefulWidget {
 //   @override
@@ -95,17 +98,21 @@ class _ImageCaptureState extends State<ImageCapture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Upload Post',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            )),
         centerTitle: true,
-        backgroundColor: Colors.black,
+        title: Text('Upload Post'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.indigo[800], Colors.indigo[200]]
+            ),
+          ),
+        ),
       ),
+
+      backgroundColor: Colors.red[300],
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey[900],
         child: Row(
           children: <Widget>[
             Expanded(

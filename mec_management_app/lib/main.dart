@@ -5,7 +5,6 @@ import 'package:mec_management_app/UI/login_page.dart';
 import 'package:mec_management_app/UI/teachandlearn/mainpage.dart';
 
 import 'UI/CCD/frontpage.dart';
-import 'UI/aboutpage.dart';
 import 'UI/faculty_members/CIVILfaculty.dart';
 import 'UI/faculty_members/CSEfaculty.dart';
 import 'UI/faculty_members/EEEfaculty.dart';
@@ -29,7 +28,6 @@ class MyApp extends StatelessWidget {
       title: 'Mahindra Ecole Centrale',
       theme: new ThemeData(
         primaryColor: Color(0xFFFF4700),
-        brightness: Brightness.dark,
       ),
       initialRoute: '/login',
       routes: {

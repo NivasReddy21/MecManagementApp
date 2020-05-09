@@ -15,7 +15,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
     _facultiesCards = [
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue, Colors.red]
+          ),
         ),
         image: '',
         name: 'ACHAL AGARWAL',
@@ -32,7 +36,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.purple[800], Colors.red]
+          ),
         ),
         image: '',
         name: 'ARYA KUMAR BHATTACHARYA',
@@ -53,7 +61,6 @@ class _FacultyPageState extends State<CSEFacultyPage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
           ),
         ),
         image: '',
@@ -71,7 +78,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.indigo[800], Colors.indigo[200]]
+          ),
         ),
         image: '',
         name: 'NEHA BHARILL',
@@ -88,7 +99,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.deepOrange, Colors.lightGreenAccent]
+          ),
         ),
         image: '',
         name: 'OM PRAKASH PATEL',
@@ -108,8 +123,7 @@ class _FacultyPageState extends State<CSEFacultyPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [kBlue, kPurple],
-            stops: [0.3, 0.95],
+            colors: [Colors.red[900], Colors.grey[800]],
           ),
         ),
         image: '',
@@ -127,7 +141,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue, Colors.red]
+          ),
         ),
         image: '',
         name: 'RAGHU KISHORE NEELISETTI',
@@ -144,8 +162,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
-        ),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.purple[800], Colors.red]
+            )),
         image: '',
         name: 'RAMA MURTHY',
         number: 'rama.murthy@mechyd.ac.in',
@@ -183,8 +204,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.grey[800], Colors.white],
+      )),
         image: '',
         name: 'SUNNY RAI',
         number: 'sunny.rai@mechyd.ac.in',
@@ -200,7 +224,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: kRed.withOpacity(0.4),
+           gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.indigo[800], Colors.indigo[200]]
+        ),
         ),
         image: '',
         name: 'VEERAIAH',
@@ -217,8 +245,11 @@ class _FacultyPageState extends State<CSEFacultyPage> {
       ),
       FacultyCard(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.6),
-        ),
+            gradient: LinearGradient(
+               begin: Alignment.topLeft,
+               end: Alignment.bottomRight,
+               colors: [Colors.deepOrange, Colors.lightGreenAccent]
+      )),
         image: '',
         name: 'VENKATA RAJESH KUMAR TAVVA',
         number: 'venkatarajesh.tavva@mechyd.ac.in',
@@ -238,6 +269,19 @@ class _FacultyPageState extends State<CSEFacultyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'MEC FACULTY',
+              style: TextStyle(
+            color: Colors.white,
+                letterSpacing: 1,
+        ),
+        ),
+        toolbarOpacity: 0,
+        backgroundColor: Color(0xFF1b1e44),
+      ),
+      backgroundColor: Colors.deepOrange[100],
       body: Center(
         child: PageView.builder(
           controller: _pageController,
@@ -325,6 +369,7 @@ class FacultyCard extends StatelessWidget {
           Text(
             'FACULTY',
             style: TextStyle(
+              color: Colors.white,
               fontSize: 15,
               shadows: [
                 Shadow(

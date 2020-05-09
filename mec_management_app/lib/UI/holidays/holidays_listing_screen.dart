@@ -36,7 +36,7 @@ class _HolidaysListingScreenState extends State<HolidaysListingScreen> {
                 child: RichText(
                   text: TextSpan(
                     children: [
-                      TextSpan(text: "Holidays List", style: AppTheme.display1),
+                      TextSpan(text:"\n\n" "Holidays List", style: AppTheme.display1),
                       TextSpan(text: "\n"),
                       TextSpan(text: "2020", style: AppTheme.display2),
                     ],
