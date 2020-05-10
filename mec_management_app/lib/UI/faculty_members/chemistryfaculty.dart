@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<chemistryFacultyPage> {
+class _FacultyPageState extends State<ChemistryFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -15,11 +15,10 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
     _facultiesCards = [
       FacultyCard(
         decoration: BoxDecoration(
-         gradient: LinearGradient(
-           begin: Alignment.topLeft,
-           end: Alignment.bottomRight,
-           colors: [Colors.blue, Colors.red]
-      )),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blue, Colors.red])),
         image: '',
         name: 'CHITRA GURNANI',
         number: 'chitra.gurnani@mechyd.ac.in',
@@ -34,12 +33,11 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
         ),
       ),
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-           end: Alignment.bottomRight,
-           colors: [Colors.purple[800], Colors.red]
-    )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.purple[800], Colors.red])),
         image: '',
         name: 'GOMATHI\nAnandhanatarajan ',
         number: 'gomathi.anandhanatarajan\n@mechyd.ac.in',
@@ -147,7 +145,7 @@ class _FacultyPageState extends State<chemistryFacultyPage> {
 }
 
 // ignore: camel_case_types
-class chemistryFacultyPage extends StatefulWidget {
+class ChemistryFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }
@@ -186,7 +184,7 @@ class FacultyCard extends StatelessWidget {
                 Shadow(
                   color: Colors.blue,
                   blurRadius: 10.0,
-                  offset: Offset(5.0,5.0),
+                  offset: Offset(5.0, 5.0),
                 ),
               ],
             ),

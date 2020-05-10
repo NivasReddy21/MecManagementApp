@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:mec_management_app/services/posts_management.dart';
 import 'package:mec_management_app/services/userDetails.dart';
 
 class StartLoadingScreen extends StatefulWidget {

@@ -1,65 +1,11 @@
 import 'dart:ui';
-
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:io';
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mec_management_app/services/posts_management.dart';
-
-// class UploadPage extends StatefulWidget {
-//   @override
-//   _UploadPageState createState() => _UploadPageState();
-// }
-
-// class _UploadPageState extends State<UploadPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color(0xFF1b1e44),
-//       appBar: AppBar(
-//         centerTitle: true,
-//         title: Text(
-//           'Upload A Post',
-//           style: TextStyle(
-//             fontSize: 30,
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//         backgroundColor: Colors.black,
-//       ),
-//       body: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: <Widget>[
-//           FlatButton(
-//             onPressed: () {},
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: <Widget>[
-//                 Icon(
-//                   Icons.photo_size_select_actual,
-//                   color: Colors.white,
-//                 ),
-//                 SizedBox(
-//                   width: 10,
-//                 ),
-//                 Text('Upload Photo',
-//                     style: TextStyle(
-//                         fontSize: 20,
-//                         fontWeight: FontWeight.bold,
-//                         color: Colors.white))
-//               ],
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class ImageCapture extends StatefulWidget {
   @override
@@ -70,6 +16,8 @@ class _ImageCaptureState extends State<ImageCapture> {
   File _imageFile;
   String _title;
   String _description;
+
+  final _formKey = GlobalKey<FormState>();
 
   Future<void> _pickImage(ImageSource source) async {
     File selected = await ImagePicker.pickImage(source: source);
@@ -149,28 +97,66 @@ class _ImageCaptureState extends State<ImageCapture> {
               ],
             ),
             SizedBox(height: 20),
-            TextField(
-              onChanged: (value) {
-                setState(() {
-                  _title = value;
-                });
-              },
-              decoration: InputDecoration(hintText: 'Title'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              onChanged: (value) {
-                setState(() {
-                  _description = value;
-                });
-              },
-              decoration: InputDecoration(hintText: 'Description'),
+            Form(
+              key: _formKey,
+              child: Column(
+                children: <Widget>[
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.person),
+                      hintText: 'Enter Title',
+                      labelText: 'Title',
+                    ),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return value;
+                    },
+                    onChanged: (value) {
+                      setState(() {
+                        _title = value;
+                      });
+                    },
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.person),
+                      hintText: 'Enter your name',
+                      labelText: 'Name',
+                    ),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      setState(() {
+                        _description = value;
+                      });
+                      return value;
+                    },
+                    onChanged: (value) {
+                      setState(() {
+                        _description = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 20),
             Uploader(
               file: _imageFile,
               title: _title,
               description: _description,
+            )
+          } else ...{
+            Text(
+              'Start Uploading',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             )
           }
         ],
@@ -198,21 +184,12 @@ class _UploaderState extends State<Uploader> {
   StorageUploadTask _uploadTask;
 
   void _startUpload() {
-    var _firebaseRef = FirebaseDatabase().reference().child('posts');
     String filePath = 'images/${DateTime.now()}.png';
-    String url;
     setState(() {
       _uploadTask = _storage.ref().child(filePath).putFile(widget.file);
     });
 
     post();
-
-    // _firebaseRef.push().set({
-    //   "title": widget.title,
-    //   "description": widget.description,
-    //   "time": DateTime.now().microsecondsSinceEpoch * -1,
-    //   "imageUrl": url
-    // });
   }
 
   void post() async {
@@ -232,7 +209,7 @@ class _UploaderState extends State<Uploader> {
 
           return Column(
             children: <Widget>[
-              if (_uploadTask.isComplete) Text('Upload COmplete')
+              if (_uploadTask.isComplete) ...{Text('Upload Complete')}
             ],
           );
         },

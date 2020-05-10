@@ -10,7 +10,7 @@ class PostManagement {
       // Await the http get response, then decode the json-formatted response.
 
       var response =
-          await http.get(mainUrl, headers: {"Accept": "appclication/json"});
+          await http.get(mainUrl, headers: {"Accept": "application/json"});
       List data = await json.decode(response.body);
       this.postData = data;
     } catch (e) {

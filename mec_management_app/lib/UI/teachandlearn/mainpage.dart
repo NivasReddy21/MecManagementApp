@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class mainPage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
   _mainPageState createState() => _mainPageState();
 }
 
 // ignore: camel_case_types
-class _mainPageState extends State<mainPage> {
+class _mainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,6 +32,7 @@ class MyCustomForm extends StatefulWidget {
     return MyCustomFormState();
   }
 }
+
 // Create a corresponding State class. This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
@@ -108,7 +109,8 @@ class MyCustomFormState extends State<MyCustomForm> {
                 textColor: Colors.white,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
-                    Scaffold.of(context).showSnackBar(SnackBar(content : Text('Date is in preprocessing')));
+                    Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text('Date is in preprocessing')));
                   }
                 },
               )),

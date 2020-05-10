@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class _FacultyPageState extends State<civilFacultyPage> {
+class _FacultyPageState extends State<CivilFacultyPage> {
   final _pageController = PageController(
     viewportFraction: 0.3,
   );
@@ -14,12 +14,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
 
     _facultiesCards = [
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-         begin: Alignment.topLeft,
-         end: Alignment.bottomRight,
-         colors: [Colors.blue, Colors.red]
-      )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blue, Colors.red])),
         image: '',
         name: 'ATAULLAH KHAN',
         number: 'mohdataullah.khan@mechyd.ac.in',
@@ -34,12 +33,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.purple[800], Colors.red]
-    )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.purple[800], Colors.red])),
         image: '',
         name: 'AVIRNENI DEEPTHI',
         number: 'deepti.avirneni@mechyd.ac.in',
@@ -75,12 +73,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.indigo[800], Colors.indigo[200]]
-      )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.indigo[800], Colors.indigo[200]])),
         image: '',
         name: 'HARI PRASAD',
         number: 'hari.chennarapu@mechyd.ac.in',
@@ -95,12 +92,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.deepOrange, Colors.lightGreenAccent]
-    )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.deepOrange, Colors.lightGreenAccent])),
         image: '',
         name: 'JAYAPRAKASH VEMURI',
         number: 'jayaprakash.vemuri@mechyd.ac.in',
@@ -136,12 +132,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.blue, Colors.red]
-    )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blue, Colors.red])),
         image: '',
         name: 'SALADI S.V SUBBARAO',
         number: 'saladi.subbarao@mechyd.ac.in',
@@ -156,12 +151,11 @@ class _FacultyPageState extends State<civilFacultyPage> {
         ),
       ),
       FacultyCard(
-          decoration: BoxDecoration(
-         gradient: LinearGradient(
-           begin: Alignment.topLeft,
-           end: Alignment.bottomRight,
-           colors: [Colors.purple[800], Colors.red]
-    )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.purple[800], Colors.red])),
         image: '',
         name: 'VENKATA DILIP KUMAR ',
         number: 'venkata.pasupuleto@mechyd.ac.in',
@@ -186,7 +180,8 @@ class _FacultyPageState extends State<civilFacultyPage> {
         title: Text(
           'MEC FACULTY',
           style: TextStyle(
-            color: Colors.white, letterSpacing: 1.0,
+            color: Colors.white,
+            letterSpacing: 1.0,
           ),
         ),
         toolbarOpacity: 0,
@@ -247,7 +242,7 @@ class _FacultyPageState extends State<civilFacultyPage> {
 }
 
 // ignore: camel_case_types
-class civilFacultyPage extends StatefulWidget {
+class CivilFacultyPage extends StatefulWidget {
   @override
   _FacultyPageState createState() => _FacultyPageState();
 }
@@ -287,7 +282,7 @@ class FacultyCard extends StatelessWidget {
                 Shadow(
                   color: Colors.blue,
                   blurRadius: 10.0,
-                  offset: Offset(5.0,5.0),
+                  offset: Offset(5.0, 5.0),
                 ),
               ],
             ),

@@ -7,12 +7,12 @@ import 'PUFF/puffpage.dart';
 import 'Pastry/Pastrypage.dart';
 
 // ignore: camel_case_types
-class frontPage extends StatefulWidget {
+class FrontPage extends StatefulWidget {
   @override
   _FrontPageState createState() => _FrontPageState();
 }
 
-class _FrontPageState extends State<frontPage> {
+class _FrontPageState extends State<FrontPage> {
   var selectedFood = 'BURGER';
 
   @override

@@ -308,13 +308,21 @@ class _HomePageState extends State<HomePage>
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 8,
+                  bottom: 8,
+                ),
+                child: Row(
+                  children: <Widget>[userName],
+                ),
+              ),
               ClipRRect(
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
                 child: Image.network(
                   postData[i]['url'],
-                  height: 150,
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -334,7 +342,7 @@ class _HomePageState extends State<HomePage>
                           Text(
                             postData[i]['title'],
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
                             height: 10,
@@ -342,7 +350,7 @@ class _HomePageState extends State<HomePage>
                           Text(
                             postData[i]['description'],
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
+                                fontSize: 17, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

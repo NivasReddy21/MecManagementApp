@@ -4,20 +4,19 @@ import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
 import 'package:mec_management_app/UI/splashscreen.dart';
 import 'package:mec_management_app/UI/teachandlearn/mainpage.dart';
-
-import 'UI/CCD/frontpage.dart';
-import 'UI/faculty_members/CIVILfaculty.dart';
-import 'UI/faculty_members/CSEfaculty.dart';
-import 'UI/faculty_members/EEEfaculty.dart';
-import 'UI/faculty_members/Humanitiesfaculty.dart';
-import 'UI/faculty_members/MECHfaculty.dart';
-import 'UI/faculty_members/Mathsfaculty.dart';
-import 'UI/faculty_members/Physicsfaculty.dart';
-import 'UI/faculty_members/chemistryfaculty.dart';
-import 'UI/faculty_members/faculty/branches.dart';
-import 'UI/holidays/holidays_listing_screen.dart';
-import 'UI/home_page_1.dart';
-import 'UI/upload_page.dart';
+import 'package:mec_management_app/UI/CCD/frontpage.dart';
+import 'package:mec_management_app/UI/faculty_members/CIVILfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/CSEfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/EEEfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/Humanitiesfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/MECHfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/Mathsfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/Physicsfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/chemistryfaculty.dart';
+import 'package:mec_management_app/UI/faculty_members/faculty/branches.dart';
+import 'package:mec_management_app/UI/holidays/holidays_listing_screen.dart';
+import 'package:mec_management_app/UI/home_page_1.dart';
+import 'package:mec_management_app/UI/upload_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -35,16 +34,16 @@ class MyApp extends StatelessWidget {
         '/splash': (context) => SplashPage(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
-        '/mainpage': (context) => mainPage(),
-        '/frontPage': (context) => frontPage(),
+        '/mainpage': (context) => MainPage(),
+        '/frontPage': (context) => FrontPage(),
         '/clubs': (context) => ClubsPage(),
         '/holidays': (context) => HolidaysListingScreen(),
         '/faculty': (context) => Branches(),
         '/cse': (context) => CSEFacultyPage(),
-        '/chemistry': (context) => chemistryFacultyPage(),
-        '/civil': (context) => civilFacultyPage(),
+        '/chemistry': (context) => ChemistryFacultyPage(),
+        '/civil': (context) => CivilFacultyPage(),
         '/eee': (context) => EEEFacultyPage(),
-        '/humanities': (context) => humanitiesFacultyPage(),
+        '/humanities': (context) => HumanitiesFacultyPage(),
         '/math': (context) => MathFacultyPage(),
         '/mech': (context) => MechFacultyPage(),
         '/phy': (context) => PhysicsFacultyPage(),
