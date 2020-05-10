@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mec_management_app/UI/aboutpage.dart';
 import 'package:mec_management_app/UI/clubs_page.dart';
 import 'package:mec_management_app/UI/loadingpage.dart';
 import 'package:mec_management_app/UI/login_page.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => SplashPage(),
+        '/about': (context) => aboutPage(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/mainpage': (context) => MainPage(),

@@ -14,8 +14,8 @@ class ImageCapture extends StatefulWidget {
 
 class _ImageCaptureState extends State<ImageCapture> {
   File _imageFile;
-  String _title;
-  String _description;
+  String _title = "";
+  String _description = "";
 
   final _formKey = GlobalKey<FormState>();
 
@@ -197,6 +197,8 @@ class _UploaderState extends State<Uploader> {
     var dowurl = await (await _uploadTask.onComplete).ref.getDownloadURL();
     url = dowurl.toString();
     PostManagement().makePostReq(widget.title, widget.description, url);
+    // ignore: unnecessary_statements
+    Navigator.of(context).pop;
   }
 
   @override

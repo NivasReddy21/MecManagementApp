@@ -303,7 +303,7 @@ class _HomePageState extends State<HomePage>
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(24))),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 15, 15, 30),
+          padding: const EdgeInsets.fromLTRB(15, 15, 15, 20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -312,9 +312,6 @@ class _HomePageState extends State<HomePage>
                 padding: EdgeInsets.only(
                   left: 8,
                   bottom: 8,
-                ),
-                child: Row(
-                  children: <Widget>[userName],
                 ),
               ),
               ClipRRect(

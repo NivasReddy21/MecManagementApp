@@ -17,6 +17,11 @@ class _LoginPageState extends State<LoginPage>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
+  @override
+  Future<void> resetPassword(String email) async {
+    await _auth.sendPasswordResetEmail(email: email);
+  }
+
   final FocusNode myFocusNodeEmailLogin = FocusNode();
   final FocusNode myFocusNodePasswordLogin = FocusNode();
 
@@ -51,10 +56,8 @@ class _LoginPageState extends State<LoginPage>
   String signInEmail;
   String signInPassword;
 
-
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +77,7 @@ class _LoginPageState extends State<LoginPage>
                     : 775.0,
                 decoration: new BoxDecoration(
                   gradient: new LinearGradient(
-                      colors: [Colors.blue[800], Colors.blue[200]
-                      ],
+                      colors: [Colors.blue[800], Colors.blue[200]],
                       begin: const FractionalOffset(0.0, 0.0),
                       end: const FractionalOffset(1.0, 1.0),
                       stops: [0.0, 1.0],
@@ -262,7 +264,7 @@ class _LoginPageState extends State<LoginPage>
                                 fontFamily: "WorkSansSemiBold", fontSize: 17.0),
                           ),
                           onChanged: (value) {
-                              setState(() {
+                            setState(() {
                               signInEmail = value.toString().trim();
                             });
                           },
@@ -331,8 +333,7 @@ class _LoginPageState extends State<LoginPage>
                     ),
                   ],
                   gradient: new LinearGradient(
-                      colors: [Colors.blue[800], Colors.blue[200]
-                      ],
+                      colors: [Colors.blue[800], Colors.blue[200]],
                       begin: const FractionalOffset(0.2, 0.2),
                       end: const FractionalOffset(1.0, 1.0),
                       stops: [0.0, 1.0],
@@ -370,7 +371,9 @@ class _LoginPageState extends State<LoginPage>
           Padding(
             padding: EdgeInsets.only(top: 10.0),
             child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  resetPassword(signInEmail);
+                },
                 child: Text(
                   "Forgot Password?",
                   style: TextStyle(
@@ -434,7 +437,11 @@ class _LoginPageState extends State<LoginPage>
               Padding(
                 padding: EdgeInsets.only(top: 10.0),
                 child: GestureDetector(
-                  onTap: () => _handleSignIn(),
+                  onTap: () {
+                    _handleSignIn().whenComplete(() {
+                      Navigator.of(context).pushNamed('/loading');
+                    });
+                  },
                   child: Container(
                     padding: const EdgeInsets.all(15.0),
                     decoration: new BoxDecoration(
@@ -646,8 +653,7 @@ class _LoginPageState extends State<LoginPage>
                     ),
                   ],
                   gradient: new LinearGradient(
-                      colors: [Colors.blue[800], Colors.blue[200]
-                      ],
+                      colors: [Colors.blue[800], Colors.blue[200]],
                       begin: const FractionalOffset(0.2, 0.2),
                       end: const FractionalOffset(1.0, 1.0),
                       stops: [0.0, 1.0],
@@ -731,18 +737,27 @@ class _LoginPageState extends State<LoginPage>
     });
   }
 
-  Future<FirebaseUser> _handleSignIn() async {
-    GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+  Future<String> _handleSignIn() async {
+    final GoogleSignInAccount googleSignInAccount =
+        await _googleSignIn.signIn();
+    final GoogleSignInAuthentication googleSignInAuthentication =
+        await googleSignInAccount.authentication;
+
     final AuthCredential credential = GoogleAuthProvider.getCredential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+      accessToken: googleSignInAuthentication.accessToken,
+      idToken: googleSignInAuthentication.idToken,
     );
-    final FirebaseUser user =
-        (await _auth.signInWithCredential(credential)) as FirebaseUser;
-    print("signed in " + user.displayName);
-    UserManagement().storeNewUser(user, context);
-    return user;
+
+    final AuthResult authResult = await _auth.signInWithCredential(credential);
+    final FirebaseUser user = authResult.user;
+
+    assert(!user.isAnonymous);
+    assert(await user.getIdToken() != null);
+
+    final FirebaseUser currentUser = await _auth.currentUser();
+    assert(user.uid == currentUser.uid);
+
+    return 'signInWithGoogle succeeded: $user';
   }
 
   Future<FirebaseUser> _handleEmailSignIn() async {

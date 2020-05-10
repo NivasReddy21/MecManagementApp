@@ -51,6 +51,8 @@ dependencies:
   after_layout: ^1.0.7+2
   flutter_icons: ^0.2.0
   email_validator: ^1.0.4
+  giffy_dialog: ^1.7.0
+
 
 
 dev_dependencies:
