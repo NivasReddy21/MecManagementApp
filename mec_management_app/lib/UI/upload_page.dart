@@ -210,9 +210,7 @@ class _UploaderState extends State<Uploader> {
           // var event = snapshot?.data?.snapshot;
 
           return Column(
-            children: <Widget>[
-              if (_uploadTask.isComplete) ...{Text('Upload Complete')}
-            ],
+            children: <Widget>[if (_uploadTask.isComplete) ...{}],
           );
         },
       );
